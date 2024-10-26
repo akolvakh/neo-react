@@ -43,11 +43,11 @@ const Details = () => {
             <Gallery gallery={camper?.gallery} name={camper?.name} />
             <p>{camper?.description}</p>
             <div>
-            <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-            <div className={detailsStyles.flexContainer}>
-                {activeTab === 'features' ? <Features camper={camper} /> : <Reviews reviews={camper?.reviews} />}
-                <BookingForm />
-            </div>
+                <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+                <div className={detailsStyles.flexContainer}>
+                    {activeTab === 'features' ? <Features camper={camper} /> : <Reviews reviews={camper?.reviews} />}
+                    <BookingForm />
+                </div>
             </div>
         </div>
     );

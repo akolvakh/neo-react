@@ -7,9 +7,9 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <Link to="/" className={styles.logo}> {/* Make logo clickable */}
         Travel<span className={styles.trucks}>Trucks</span>
-      </div>
+      </Link>
       <nav className={styles.nav}>
         <Link 
           to="/" 

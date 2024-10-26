@@ -22,6 +22,10 @@ const RVCard = ({ rv }) => {
         navigate(`/details/${rv.id}`);
     };
 
+    const formatPrice = (price) => {
+        return price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
     return (
         <div className={styles.rvCard}>
             <img src={rv.gallery[0].thumb} alt={rv.name} />
@@ -29,7 +33,7 @@ const RVCard = ({ rv }) => {
                 <div className={styles.rvCard__header}>
                     <h3 className={styles.rvCard__title}>{rv.name}</h3>
                     <div className={styles.rvCard__actions}>
-                        <span className={styles.rvCard__price}>€{rv.price}</span>
+                        <span className={styles.rvCard__price}>€{formatPrice(rv.price)}</span>
                         <FontAwesomeIcon
                             icon={isFavorite ? solidHeart : regularHeart}
                             className={`${styles.rvCard__favoriteIcon} ${isFavorite ? styles.favorited : ''}`}

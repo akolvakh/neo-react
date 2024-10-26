@@ -6,12 +6,21 @@ import toast, { Toaster } from 'react-hot-toast';
 import api from '../../services/api';
 import styles from './Details.module.css';
 
+
+
+
+
+
 const Details = () => {
     const { id } = useParams();
     const [camper, setCamper] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const [activeTab, setActiveTab] = useState('features');
+
+    const formatPrice = (price) => {
+        return price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
 
     useEffect(() => {
         const fetchCamperData = async () => {
@@ -48,7 +57,7 @@ const Details = () => {
             {/* Rest of the component */}
             <h1>{camper?.name}</h1>
             <p className={styles.infoLine}>{camper?.rating} ⭐ | {camper?.location}</p>
-            <h2>{camper?.price} €</h2>
+            <h2>{formatPrice(camper?.price)} €</h2>
             <div className={styles.photoSection}>
                 {camper?.gallery.length > 0 ? (
                     camper.gallery.map((image, index) => (

@@ -115,3 +115,10 @@ const vehiclesSlice = createSlice({
 export const { setPendingFilter, setPendingLocation, applyPendingFilters, incrementVisibleCount, toggleFavorite, resetVisibleCount, setLoadingMore, clearFilters } = vehiclesSlice.actions;
 
 export default vehiclesSlice.reducer;
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+/* Gallery.module.css */
+.photoSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .photoSection img {
+    width: 292px;
+    height: 312px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  

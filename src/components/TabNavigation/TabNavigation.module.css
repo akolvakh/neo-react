@@ -1,0 +1,20 @@
+/* TabNavigation.module.css */
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .activeTab {
+    border-bottom: 2px solid red;
+  }
+  

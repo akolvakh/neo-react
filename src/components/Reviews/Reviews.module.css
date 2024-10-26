@@ -1,0 +1,35 @@
+/* Reviews.module.css */
+.reviewItem {
+    background: #f8f8f8;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .reviewerAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .reviewerName {
+    font-weight: bold;
+  }
+  
+  .reviewRating {
+    margin-left: 10px;
+    color: #f39c12;
+  }
+  
+  .reviewText {
+    margin-top: 5px;
+    color: #555;
+  }
+  

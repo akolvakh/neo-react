@@ -5,7 +5,7 @@ import Home from '../../pages/Home/Home';
 import Catalog from '../../pages/Catalog/Catalog';
 import Details from '../../pages/Details/Details'; // Import the Details component
 
-import '../../styles/colors.module.css';  // Global styles
+import '../../styles/main.css';  // Global styles
 
 function App() {
   return (

@@ -6,6 +6,9 @@ import styles from './Catalog.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSnowflake, faCar, faUtensils, faTelevision, faRestroom, faBus } from '@fortawesome/free-solid-svg-icons';
 
+import Filters from '../../components/Filters/Filters'; // Ensure Filters component is imported
+
+
 const Catalog = () => {
     const [campers, setCampers] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -95,138 +98,43 @@ const Catalog = () => {
         }, 1000);
     };
 
+ 
+
     const displayedCampers = filteredCampers.length > 0 ? filteredCampers : campers;
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
 
     return (
-        <section className={styles.catalog}>
-            <div className={styles.filtersSection}>
-                <div className={styles.filters}>
-                    <h3>Location</h3>
-                    <input
-                        type="text"
-                        placeholder="Kyiv, Ukraine"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                    />
-                </div>
-
-                <h3>Filters</h3>
-                <div className={styles.filters}>
-                    <h4>Vehicle Equipment</h4>
-                    <hr className={styles.divider} />
-                    <div className={styles.equipmentButtons}>
-                        <label className={`${styles.filterButton} ${selectedFilters.AC ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.AC}
-                                onChange={() => handleFilterChange('AC')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faSnowflake} />
-                            <span>AC</span>
-                        </label>
-                        <label className={`${styles.filterButton} ${selectedFilters.automatic ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.automatic}
-                                onChange={() => handleFilterChange('automatic')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faCar} />
-                            <span>Automatic</span>
-                        </label>
-                        <label className={`${styles.filterButton} ${selectedFilters.kitchen ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.kitchen}
-                                onChange={() => handleFilterChange('kitchen')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faUtensils} />
-                            <span>Kitchen</span>
-                        </label>
-                        <label className={`${styles.filterButton} ${selectedFilters.TV ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.TV}
-                                onChange={() => handleFilterChange('TV')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faTelevision} />
-                            <span>TV</span>
-                        </label>
-                        <label className={`${styles.filterButton} ${selectedFilters.bathroom ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.bathroom}
-                                onChange={() => handleFilterChange('bathroom')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faRestroom} />
-                            <span>Bathroom</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div className={styles.vehicleType}>
-                    <h4>Vehicle Type</h4>
-                    <hr className={styles.divider} />
-                    <div className={styles.typeButtons}>
-                        <label className={`${styles.filterButton} ${selectedFilters.van ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.van}
-                                onChange={() => handleFilterChange('van')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faBus} />
-                            <span>Van</span>
-                        </label>
-                        <label className={`${styles.filterButton} ${selectedFilters.fullyIntegrated ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.fullyIntegrated}
-                                onChange={() => handleFilterChange('fullyIntegrated')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faBus} />
-                            <span>Fully Integrated</span>
-                        </label>
-                        <label className={`${styles.filterButton} ${selectedFilters.alcove ? styles.active : ''}`}>
-                            <input
-                                type="checkbox"
-                                checked={selectedFilters.alcove}
-                                onChange={() => handleFilterChange('alcove')}
-                                style={{ display: 'none' }} // Hide checkbox
-                            />
-                            <FontAwesomeIcon icon={faBus} />
-                            <span>Alcove</span>
-                        </label>
-                    </div>
-                </div>
-
-                <button className={styles.searchButton} onClick={handleSearch}>Search</button>
-            </div>
-
-            <div className={styles.rvCardsSection}>
-                {displayedCampers.slice(0, visibleCount).map((rv) => (
-                    <RVCard key={rv.id} rv={rv} />
-                ))}
-                {loadingMore ? (
-                    <div className={styles.loadingText}>Loading...</div>
-                ) : (
-                    visibleCount < campers.length && (
-                        <button className={styles.loadMoreButton} onClick={handleLoadMore}>
-                            Load more
-                        </button>
-                    )
-                )}
+        <section className={styles.container}>
+            <div className={styles.catalog}>
+            <Filters
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+            handleFilterChange={handleFilterChange} // Ensure this is passed correctly
+            location={location}
+            setLocation={setLocation}
+            handleSearch={handleSearch} // Ensure this is passed correctly
+            />
+<div className={styles.rvCardsSection}>
+{displayedCampers.slice(0, visibleCount).map((rv) => (
+    <RVCard key={rv.id} rv={rv} />
+))}
+{loadingMore ? (
+    <div className={styles.loadingText}>Loading...</div>
+) : (
+    visibleCount < campers.length && (
+        <button className={styles.loadMoreButton} onClick={handleLoadMore}>
+            Load more
+        </button>
+    )
+)}
+</div>
             </div>
         </section>
     );
 };
 
 export default Catalog;
+
+

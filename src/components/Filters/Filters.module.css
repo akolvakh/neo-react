@@ -1,0 +1,152 @@
+.filtersSection {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.filtersSection h3, .filtersSection h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filterButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 96px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.filterButton:hover {
+  background-color: #eee;
+  color: #000;
+  border-color: #e44848;
+}
+
+.filterButton.active {
+  border: 2px solid red;
+}
+
+.filtersSection input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.filtersSection input::placeholder {
+  color: #999;
+}
+
+.equipmentButtons, .typeButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.searchButton {
+  background-color: #e44848;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  width: auto;
+  margin-top: 20px;
+}
+
+.searchButton:hover {
+  background-color: #c33c3c;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+
+
+
+.filtersContainer {
+  padding: 16px;
+}
+
+.filterSection h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chevronIcon {
+  margin-left: 8px;
+}
+
+.equipmentButtons, .typeButtons, .transmissionButtons, .engineButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+.active {
+  border: 2px solid red;
+}
+
+
+
+.filtersSection {
+    padding: 16px;
+}
+
+.filterSection h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.chevronIcon {
+    margin-left: 8px;
+    font-size: 0.8em;
+}
+
+.equipmentButtons, .typeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filterButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.filterButton.active {
+    border: 2px solid red;
+}

@@ -1,16 +1,50 @@
-.catalog {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* Left (filters) 1/4 width, Right (cards) 3/4 width */
-    gap: 20px;
-    padding: 20px;
-    background-color: white; /* Set white background for the whole catalog */
+.container {
+    padding: 48px 170px; /* Left and right padding */
+    background-color: white;
+    margin: 0 auto; /* Center the container */
 }
 
+.catalog {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* 1/4 for filters, 3/4 for RV cards */
+    gap: 20px;
+}
 
 .rvCardsSection {
     display: grid;
     gap: 20px;
 }
+
+.loadMoreButton {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    width: auto;
+    text-align: center;
+}
+
+.loadMoreButton:hover {
+    background-color: #f0f0f0;
+}
+
+.loadingText {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
 
 
 
@@ -90,22 +124,6 @@
     color: #999;
 }
 
-.loadMoreButton {
-    background-color: white; /* Make button background white */
-    color: #333; /* Dark text color for contrast */
-    border: 1px solid #ddd; /* Light border for visibility */
-    padding: 10px 20px; /* Padding around the text */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin: 20px auto; /* Centering the button with auto margins */
-    display: block; /* Make the button a block element */
-    width: auto; /* Prevent stretching */
-    text-align: center; /* Center text inside the button */
-}
-
-.loadMoreButton:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
-}
 
 
 
@@ -124,15 +142,6 @@
 
 
 
-
-
-
-.loadingText {
-    color: black; /* Set text color to black */
-    font-weight: bold; /* Optional: Make it bold */
-    text-align: center; /* Center the text */
-    margin-top: 20px; /* Space above the loading text */
-}
 
 
 
@@ -258,4 +267,5 @@
     margin-bottom: 5px; /* Space between title and input */
     font-weight: bold; /* Make the title bold */
 }
+
 

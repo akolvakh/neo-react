@@ -67,6 +67,15 @@ const vehiclesSlice = createSlice({
             });
             state.visibleCount = 5; // Reset to first 5 results
         },
+        toggleFavorite: (state, action) => {
+            const vehicleId = action.payload;
+            if (state.favorites.includes(vehicleId)) {
+                state.favorites = state.favorites.filter(id => id !== vehicleId);
+            } else {
+                state.favorites.push(vehicleId);
+            }
+            console.log("Updated favorites:", state.favorites); // Check if favorites array updates correctly
+        },
         clearFilters: (state) => {
             state.filters.location = '';
             state.filters.selectedFilters = {

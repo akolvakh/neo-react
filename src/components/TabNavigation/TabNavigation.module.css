@@ -29,6 +29,8 @@
   color: #ff4757; /* Active color */
   outline: 0px auto -webkit-focus-ring-color;
 }
+
+
  
 .activeTab::after {
   content: '';

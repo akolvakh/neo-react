@@ -11,13 +11,15 @@ const Reviews = ({ reviews }) => {
                 
                 return (
                     <li className={styles.reviewItem} key={index}>
-                        <div className={styles.reviewerAvatar}>{reviewerInitial}</div>
-                        <div className={styles.reviewerDetails}>
-                            <div className={styles.reviewerHeader}>
-                                <span className={styles.reviewerName}>{review.reviewer_name}</span>
-                                <span className={styles.reviewRating}>{'⭐'.repeat(review.reviewer_rating)}</span>
+                        <div className={styles.reviewerBox}>
+                            <div className={styles.reviewerAvatar}>{reviewerInitial}</div>
+                            <div className={styles.reviewerDetails}>
+                                <div className={styles.reviewerHeader}>
+                                    <span className={styles.reviewerName}>{review.reviewer_name}</span>
+                                    <span className={styles.reviewRating}>{'⭐'.repeat(review.reviewer_rating)}</span>
+                                </div>
+                                <p className={styles.reviewText}>{review.comment}</p>
                             </div>
-                            <p className={styles.reviewText}>{review.comment}</p>
                         </div>
                     </li>
                 );

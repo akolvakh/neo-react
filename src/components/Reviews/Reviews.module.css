@@ -17,21 +17,27 @@
   display: flex;
   align-items: flex-start;
 }
+.reviewerBox {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
 
 
 
 .reviewerAvatar {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background-color: #e0e0e0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-weight: bold;
-  font-size: 20px;
+  justify-content: center;
   color: #555;
-  margin-right: 15px;
+  background-color: #e0e0e0;
 }
 
 .reviewerName {

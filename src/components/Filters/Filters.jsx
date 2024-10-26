@@ -1,7 +1,6 @@
-// src/components/Filters/Filters.jsx
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter, setLocation, fetchVehicles } from '../../redux/vehiclesSlice';
+import { setFilter, setLocation, fetchVehicles, applyFilters } from '../../redux/vehiclesSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faSnowflake, faCar, faUtensils, faTelevision, faRestroom, faBus,
@@ -9,25 +8,34 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import styles from './Filters.module.css';
 
+
+
+
+
+
 const Filters = () => {
     const dispatch = useDispatch();
     const { location, selectedFilters } = useSelector((state) => state.vehicles.filters);
 
-    // Toggle states for each section
     const [showEquipment, setShowEquipment] = useState(true);
     const [showVehicleType, setShowVehicleType] = useState(true);
 
+    
+
     const handleFilterChange = (filter) => {
         dispatch(setFilter({ filter, value: !selectedFilters[filter] }));
+        dispatch(applyFilters()); // Apply filters immediately after setting a filter
     };
-
+    
     const handleLocationChange = (e) => {
         dispatch(setLocation(e.target.value));
+        dispatch(applyFilters()); // Apply filters immediately after setting location
     };
 
     const handleSearch = () => {
-        dispatch(fetchVehicles(selectedFilters));
+        dispatch(fetchVehicles());
     };
+    
 
     return (
         <div className={styles.filtersSection}>

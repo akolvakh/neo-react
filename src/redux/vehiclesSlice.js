@@ -1,23 +1,18 @@
-// src/slices/vehiclesSlice.js
+// vehiclesSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../services/api';
 
-export const fetchVehicles = createAsyncThunk(
-    'vehicles/fetchVehicles',
-    async (filters, { getState, dispatch }) => {
-        const state = getState();
-        // Reset the current vehicle list when a new fetch is initiated
-        dispatch(resetVehicles());
-        
-        const response = await api.fetchCampers(filters); // Adjust based on your API structure
-        return response.items; // assuming response contains an "items" array
-    }
-);
+export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async () => {
+    const response = await api.fetchCampers();
+    return response.items; // Assume response contains the campers array in `items`
+});
 
 const vehiclesSlice = createSlice({
     name: 'vehicles',
     initialState: {
         vehicles: [],
+        filteredVehicles: [],
+        favorites: [],
         filters: {
             location: '',
             selectedFilters: {
@@ -29,48 +24,61 @@ const vehiclesSlice = createSlice({
                 van: false,
                 fullyIntegrated: false,
                 alcove: false,
-            },
+            }
         },
-        favorites: [],
-        status: 'idle',
+        loading: false,
         error: null,
+        visibleCount: 5,
     },
     reducers: {
-        setFilter(state, action) {
+        setFilter: (state, action) => {
             const { filter, value } = action.payload;
             state.filters.selectedFilters[filter] = value;
         },
-        setLocation(state, action) {
+        setLocation: (state, action) => {
             state.filters.location = action.payload;
         },
-        resetVehicles(state) {
-            state.vehicles = []; // Clear the vehicle list on new search
+        applyFilters: (state) => {
+            const { location, selectedFilters } = state.filters;
+            state.filteredVehicles = state.vehicles.filter((vehicle) => {
+                if (location && !vehicle.location.toLowerCase().includes(location.toLowerCase())) {
+                    return false;
+                }
+                return Object.entries(selectedFilters).every(([key, isSelected]) => {
+                    return !isSelected || vehicle[key] === true;
+                });
+            });
         },
-        toggleFavorite(state, action) {
+        incrementVisibleCount: (state) => {
+            state.visibleCount += 5;
+        },
+        toggleFavorite: (state, action) => {
             const vehicleId = action.payload;
             if (state.favorites.includes(vehicleId)) {
                 state.favorites = state.favorites.filter(id => id !== vehicleId);
             } else {
                 state.favorites.push(vehicleId);
             }
-        },
+        }
     },
     extraReducers: (builder) => {
         builder
             .addCase(fetchVehicles.pending, (state) => {
-                state.status = 'loading';
+                state.loading = true;
                 state.error = null;
             })
             .addCase(fetchVehicles.fulfilled, (state, action) => {
-                state.status = 'succeeded';
+                state.loading = false;
                 state.vehicles = action.payload;
+                state.filteredVehicles = action.payload;
             })
             .addCase(fetchVehicles.rejected, (state, action) => {
-                state.status = 'failed';
+                state.loading = false;
                 state.error = action.error.message;
             });
     },
 });
 
-export const { setFilter, setLocation, resetVehicles, toggleFavorite } = vehiclesSlice.actions;
+export const { setFilter, setLocation, applyFilters, incrementVisibleCount, toggleFavorite } = vehiclesSlice.actions;
+
 export default vehiclesSlice.reducer;

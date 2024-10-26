@@ -1,15 +1,20 @@
 /* DetailsContainer.module.css */
 .detailsContainer {
-    padding: 48px 170px; /* Left and right padding */
+    padding: 118px 170px; /* Left and right padding */
     margin: auto;
     background-color: #fff;
     color: black;
   }
   
   .flexContainer {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 20px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 44px 0 80px;
+    align-items: flex-start;
+    gap: 40px;
   }
   
   .featuresContainer,
@@ -18,3 +23,4 @@
     margin-right: 20px;
   }
   
+

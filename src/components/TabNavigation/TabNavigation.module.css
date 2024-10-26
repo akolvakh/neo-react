@@ -1,20 +1,44 @@
-/* TabNavigation.module.css */
 .tabs {
-    display: flex;
-    justify-content: flex-start;
-    margin: 20px 0;
-  }
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 0;
+  border-bottom: 1px solid #e0e0e0; /* Light gray line across all tabs */
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333; /* Dark text color */
+  position: relative;
+  font-weight: bold; /* Make the text bold */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.tab:not(:last-child) {
+  margin-right: 20px; /* Add space between tabs */
+}
+
+.tab:hover {
+  color: #ff4757; /* Hover color */
+}
+
+.activeTab {
+  color: #ff4757; /* Active color */
+  outline: 0px auto -webkit-focus-ring-color;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #ff4757; /* Red underline */
   
-  .tab {
-    padding: 10px 20px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 16px;
-    color: black;
-  }
-  
-  .activeTab {
-    border-bottom: 2px solid red;
-  }
-  
+}
+
+

@@ -1,42 +1,71 @@
-/* BookingForm.module.css */
 .bookingForm {
     background: #ffffff;
-    padding: 20px;
+    padding: 43px 56px;
     border-radius: 10px;
     border: 1px solid #c4c3c3;
-  }
-  
-  .bookingForm h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+
+    margin: auto; /* Center the form */
+
+    display: flex;
+    flex-direction: column;
+ 
+
+
+}
+
+
+
+
+.bookingForm h3 {
+    font-size: 24px;
+    font-weight: bold;
     color: #333;
-  }
-  
-  .bookingForm p {
+    margin-bottom: 10px;
+}
+
+.bookingForm p {
     font-size: 14px;
     color: #666;
-  }
-  
-  .bookingForm input,
-  .bookingForm textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-  }
-  
-  .bookingForm button {
-    padding: 12px 20px;
-    background-color: #ff4757;
+    margin-bottom: 20px; /* Add space between description and fields */
+}
+
+
+
+
+.bookingForm input,
+.bookingForm textarea {
+    width: calc(100% - 24px); /* Ensures padding is accounted for within the element */
+    padding: 12px 15px; /* Adjust padding */
+    margin-bottom: 15px; /* Add consistent spacing */
+    border: none; /* Remove border */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light gray background */
+    font-size: 14px; /* Smaller font size */
+    color: #333;
+}
+
+
+
+.bookingForm input:focus,
+.bookingForm textarea:focus {
+    outline: none; /* Remove outline on focus */
+    box-shadow: 0px 0px 2px 1px #ff4757; /* Light shadow to indicate focus */
+}
+
+.bookingForm button {
+    width: 100%; /* Full width button */
+    padding: 15px 0; /* Adjust padding for height */
+    background-color: #ff4757; /* Red color */
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 25px; /* More rounded corners */
     font-size: 16px;
-  }
-  
-  .bookingForm button:hover {
-    background-color: #ff6b81;
-  }
-  
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.bookingForm button:hover {
+    background-color: #ff6b81; /* Slightly darker red on hover */
+}

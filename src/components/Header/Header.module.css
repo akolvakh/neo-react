@@ -4,10 +4,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
   height: 24px;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
   
 }
+
+
 
 .logo {
   font-size: 24px;

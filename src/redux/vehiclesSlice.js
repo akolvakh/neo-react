@@ -94,12 +94,13 @@ const vehiclesSlice = createSlice({
             .addCase(fetchVehicles.fulfilled, (state, action) => {
                 state.loading = false;
                 state.vehicles = action.payload;
-                state.filteredVehicles = action.payload.slice(0, 5); // Default display of first 5 campers
-            })
+                state.filteredVehicles = action.payload; // Allow `Catalog` to control the slicing for initial render
+            })            
             .addCase(fetchVehicles.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message;
             });
+            
     },
 });
 

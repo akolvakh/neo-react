@@ -31,8 +31,20 @@ const Catalog = () => {
     useEffect(() => {
         console.log('Filtered Campers:', filteredCampers.length);
     }, [filteredCampers]);
+    
+    useEffect(() => {
+        console.log('Loading:', loading);
+        console.log('Loading More:', loadingMore);
+        console.log('Visible Count:', visibleCount);
+        console.log('Filtered Campers Length:', filteredCampers.length);
+    }, [loading, loadingMore, visibleCount, filteredCampers]);
 
-
+    useEffect(() => {
+        if (!loading) {
+            console.log('Final Filtered Campers:', filteredCampers);
+            console.log('Final Visible Count:', visibleCount);
+        }
+    }, [loading, filteredCampers, visibleCount]);
 
     const handleLoadMore = () => {
         dispatch(setLoadingMore(true));
@@ -45,19 +57,28 @@ const Catalog = () => {
     const displayedCampers = filteredCampers.slice(0, visibleCount);
     
     
+    
 
     return (
         <section className={styles.container}>
             <Toaster position="top-right" reverseOrder={false} />
+            
+            {/* Show initial loader */}
             {loading && <Loader />}
+            
+            {/* Show overlay loader while loading more items */}
             {loadingMore && <Loader />}
+    
             <div className={styles.catalog}>
                 <Filters />
                 <div className={styles.rvCardsSection}>
+                    {/* Render RV cards based on visible count */}
                     {displayedCampers.map((rv) => (
                         <RVCard key={rv.id} rv={rv} />
                     ))}
-                    {visibleCount < filteredCampers.length && (
+    
+                    {/* Show Load More button only if visibleCount is less than the length of filteredCampers */}
+                    {!loading && visibleCount < filteredCampers.length && (
                         <button className={styles.loadMoreButton} onClick={handleLoadMore}>
                             Load more
                         </button>
@@ -66,6 +87,7 @@ const Catalog = () => {
             </div>
         </section>
     );
+    
 };
 
 export default Catalog;

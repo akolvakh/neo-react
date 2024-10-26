@@ -8,11 +8,9 @@ const options = {
 };
 
 // Fetch the collection of all campers
-// Fetch the collection of all campers
 export const fetchCampers = async () => {
   try {
     const response = await axios.get(`${BASE_URL}campers`, options);
-    console.log(response);
     return response.data; // Returns the array of campers
   } catch (error) {
     console.error("API Error:", error);
@@ -24,7 +22,6 @@ export const fetchCampers = async () => {
 const fetchCamperDetails = async (camperId) => {
   try {
     const response = await axios.get(`${BASE_URL}campers/${camperId}`, options);
-    console.log(response);
     return response.data; // Returns the camper details
   } catch (error) {
     console.error('API Error:', error);
@@ -32,7 +29,6 @@ const fetchCamperDetails = async (camperId) => {
   }
 };
 
-// src/services/api.js
 export const fetchVehicles = async (filters) => {
   // Assume your API endpoint is something like `/api/vehicles`
   // You may need to adjust this based on how your API works
@@ -48,10 +44,6 @@ export const fetchVehicles = async (filters) => {
   }
   return await response.json();
 };
-
-
-
-
 
 
 export default {

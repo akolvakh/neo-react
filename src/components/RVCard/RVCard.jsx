@@ -1,21 +1,21 @@
-// src/components/RVCard/RVCard.jsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '../../redux/vehiclesSlice';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'; // Filled heart
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; // Regular heart
 import styles from './RVCard.module.css';
-
-
 
 const RVCard = ({ rv }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // Check if the vehicle is in favorites
     const isFavorite = useSelector((state) => state.vehicles.favorites.includes(rv.id));
 
     const handleToggleFavorite = () => {
         dispatch(toggleFavorite(rv.id));
+        console.log('Favorite toggled:', rv.id);
     };
 
     const handleShowMore = () => {
@@ -30,12 +30,11 @@ const RVCard = ({ rv }) => {
                     <h3 className={styles.rvCard__title}>{rv.name}</h3>
                     <div className={styles.rvCard__actions}>
                         <span className={styles.rvCard__price}>€{rv.price}</span>
-                        <button 
-                            className={`${styles.rvCard__favoriteButton} ${isFavorite ? styles.favorited : ''}`} 
+                        <FontAwesomeIcon
+                            icon={isFavorite ? solidHeart : regularHeart}
+                            className={`${styles.rvCard__favoriteIcon} ${isFavorite ? styles.favorited : ''}`}
                             onClick={handleToggleFavorite}
-                        >
-                            ❤️
-                        </button>
+                        />
                     </div>
                 </div>
                 <div className={styles.rvCard__info}>

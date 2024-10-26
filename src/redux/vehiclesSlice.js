@@ -3,8 +3,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../services/api';
 
 export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async () => {
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a 1-second delay
     const response = await api.fetchCampers();
-    return response.items; // Assume response contains the campers array in `items`
+    return response.items;
 });
 
 const vehiclesSlice = createSlice({
@@ -27,6 +28,7 @@ const vehiclesSlice = createSlice({
             }
         },
         loading: false,
+        loadingMore: false,
         error: null,
         visibleCount: 5,
     },
@@ -40,7 +42,8 @@ const vehiclesSlice = createSlice({
         },
         applyFilters: (state) => {
             const { location, selectedFilters } = state.filters;
-            state.filteredVehicles = state.vehicles.filter((vehicle) => {
+            const vehiclesArray = Array.isArray(state.vehicles) ? state.vehicles : [];
+            state.filteredVehicles = vehiclesArray.filter((vehicle) => {
                 if (location && !vehicle.location.toLowerCase().includes(location.toLowerCase())) {
                     return false;
                 }
@@ -49,9 +52,6 @@ const vehiclesSlice = createSlice({
                 });
             });
         },
-        incrementVisibleCount: (state) => {
-            state.visibleCount += 5;
-        },
         toggleFavorite: (state, action) => {
             const vehicleId = action.payload;
             if (state.favorites.includes(vehicleId)) {
@@ -59,7 +59,16 @@ const vehiclesSlice = createSlice({
             } else {
                 state.favorites.push(vehicleId);
             }
-        }
+        },
+        incrementVisibleCount: (state) => {
+            state.visibleCount += 5;
+        },
+        resetVisibleCount: (state) => {
+            state.visibleCount = 5;
+        },
+        setLoadingMore: (state, action) => {
+            state.loadingMore = action.payload;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -79,6 +88,6 @@ const vehiclesSlice = createSlice({
     },
 });
 
-export const { setFilter, setLocation, applyFilters, incrementVisibleCount, toggleFavorite } = vehiclesSlice.actions;
+export const { setFilter, setLocation, applyFilters, incrementVisibleCount, toggleFavorite, resetVisibleCount, setLoadingMore } = vehiclesSlice.actions;
 
 export default vehiclesSlice.reducer;

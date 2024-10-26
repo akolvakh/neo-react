@@ -1,11 +1,22 @@
-// src/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import vehiclesReducer from './vehiclesSlice';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import rootReducer from './rootReducer'; // Make sure this path is correct
+
+const persistConfig = {
+    key: 'root',
+    storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-    reducer: {
-        vehicles: vehiclesReducer,
-    },
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false,
+        }),
 });
 
-export default store;
+export const persistor = persistStore(store);
+export default store; // This line is essential to provide the default export

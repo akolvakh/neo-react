@@ -104,15 +104,29 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 24px; /* Adjust size as needed */
-    color: gray; /* Default color */
-    transition: color 0.3s ease; /* Smooth color transition */
+    font-size: 24px;
+    color: gray;
+    transition: color 0.3s ease;
 }
 
 .rvCard__favoriteButton:hover {
-    color: red; /* Change color on hover */
+    color: red;
 }
 
 .favorited {
-    color: red; /* Color when it's favorited */
+    color: red; /* Primary color change */
+    transform: scale(1.1); /* Slight scale up when favorited */
+    transition: transform 0.2s ease, color 0.3s ease;
 }
+
+.rvCard__favoriteIcon {
+    font-size: 24px;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rvCard__favoriteIcon:hover {
+    color: red;
+}
+

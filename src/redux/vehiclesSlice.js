@@ -27,20 +27,34 @@ const vehiclesSlice = createSlice({
                 alcove: false,
             }
         },
+        pendingFilters: {
+            location: '',
+            selectedFilters: {
+                AC: false,
+                automatic: false,
+                kitchen: false,
+                TV: false,
+                bathroom: false,
+                van: false,
+                fullyIntegrated: false,
+                alcove: false,
+            }
+        },
         loading: false,
         loadingMore: false,
         error: null,
         visibleCount: 5,
     },
     reducers: {
-        setFilter: (state, action) => {
+        setPendingFilter: (state, action) => {
             const { filter, value } = action.payload;
-            state.filters.selectedFilters[filter] = value;
+            state.pendingFilters.selectedFilters[filter] = value;
         },
-        setLocation: (state, action) => {
-            state.filters.location = action.payload;
+        setPendingLocation: (state, action) => {
+            state.pendingFilters.location = action.payload;
         },
-        applyFilters: (state) => {
+        applyPendingFilters: (state) => {
+            state.filters = { ...state.pendingFilters }; // Apply pending filters to main filters
             const { location, selectedFilters } = state.filters;
             const vehiclesArray = Array.isArray(state.vehicles) ? state.vehicles : [];
             state.filteredVehicles = vehiclesArray.filter((vehicle) => {
@@ -51,6 +65,7 @@ const vehiclesSlice = createSlice({
                     return !isSelected || vehicle[key] === true;
                 });
             });
+            state.visibleCount = 5; // Reset to first 5 results
         },
         clearFilters: (state) => {
             state.filters.location = '';
@@ -64,16 +79,9 @@ const vehiclesSlice = createSlice({
                 fullyIntegrated: false,
                 alcove: false,
             };
-            state.visibleCount = 5; // Reset to show first 5 campers
-            state.filteredVehicles = state.vehicles; // Display all vehicles after reset
-        },
-        toggleFavorite: (state, action) => {
-            const vehicleId = action.payload;
-            if (state.favorites.includes(vehicleId)) {
-                state.favorites = state.favorites.filter(id => id !== vehicleId);
-            } else {
-                state.favorites.push(vehicleId);
-            }
+            state.pendingFilters = { ...state.filters };
+            state.visibleCount = 5;
+            state.filteredVehicles = state.vehicles;
         },
         incrementVisibleCount: (state) => {
             state.visibleCount = Math.min(state.visibleCount + 5, state.filteredVehicles.length);
@@ -94,16 +102,16 @@ const vehiclesSlice = createSlice({
             .addCase(fetchVehicles.fulfilled, (state, action) => {
                 state.loading = false;
                 state.vehicles = action.payload;
-                state.filteredVehicles = action.payload; // Allow `Catalog` to control the slicing for initial render
-            })            
+                state.filteredVehicles = action.payload;
+                state.pendingFilters = { ...state.filters }; // Reset pending filters to current filters
+            })
             .addCase(fetchVehicles.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message;
             });
-            
     },
 });
 
-export const { setFilter, setLocation, applyFilters, incrementVisibleCount, toggleFavorite, resetVisibleCount, setLoadingMore, clearFilters } = vehiclesSlice.actions;
+export const { setPendingFilter, setPendingLocation, applyPendingFilters, incrementVisibleCount, toggleFavorite, resetVisibleCount, setLoadingMore, clearFilters } = vehiclesSlice.actions;
 
 export default vehiclesSlice.reducer;

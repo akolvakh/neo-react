@@ -1,6 +1,7 @@
+// Filters.jsx
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter, setLocation, fetchVehicles, applyFilters } from '../../redux/vehiclesSlice';
+import { setPendingFilter, setPendingLocation, applyPendingFilters } from '../../redux/vehiclesSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faSnowflake, faCar, faUtensils, faTelevision, faRestroom, faBus,
@@ -8,34 +9,27 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import styles from './Filters.module.css';
 
-
-
-
-
-
 const Filters = () => {
     const dispatch = useDispatch();
-    const { location, selectedFilters } = useSelector((state) => state.vehicles.filters);
+
+    // Provide fallback empty object to avoid undefined error
+    const location = useSelector((state) => state.vehicles.pendingFilters?.location || '');
+    const selectedFilters = useSelector((state) => state.vehicles.pendingFilters?.selectedFilters || {});
 
     const [showEquipment, setShowEquipment] = useState(true);
     const [showVehicleType, setShowVehicleType] = useState(true);
 
-    
-
     const handleFilterChange = (filter) => {
-        dispatch(setFilter({ filter, value: !selectedFilters[filter] }));
-        dispatch(applyFilters()); // Apply filters immediately after setting a filter
+        dispatch(setPendingFilter({ filter, value: !selectedFilters[filter] }));
     };
     
     const handleLocationChange = (e) => {
-        dispatch(setLocation(e.target.value));
-        dispatch(applyFilters()); // Apply filters immediately after setting location
+        dispatch(setPendingLocation(e.target.value));
     };
 
     const handleSearch = () => {
-        dispatch(fetchVehicles());
+        dispatch(applyPendingFilters());
     };
-    
 
     return (
         <div className={styles.filtersSection}>

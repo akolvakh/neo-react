@@ -1,6 +1,8 @@
+// Catalog.jsx
+
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchVehicles, incrementVisibleCount, resetVisibleCount, setLoadingMore } from '../../redux/vehiclesSlice';
+import { fetchVehicles, incrementVisibleCount, resetVisibleCount, setLoadingMore, clearFilters } from '../../redux/vehiclesSlice';
 import RVCard from '../../components/RVCard/RVCard';
 import Filters from '../../components/Filters/Filters';
 import Loader from '../../components/Loader/Loader';
@@ -16,31 +18,39 @@ const Catalog = () => {
     const visibleCount = useSelector((state) => state.vehicles.visibleCount);
 
     useEffect(() => {
-        dispatch(fetchVehicles()); // Fetch all vehicles on initial load
-        dispatch(resetVisibleCount()); // Reset visible count on component mount
+        dispatch(fetchVehicles());
+        dispatch(clearFilters()); // Reset filters and visible count on page load
     }, [dispatch]);
 
     useEffect(() => {
         if (error) {
-            toast.error(error); // Show error toast notification if there is an error
+            toast.error(error);
         }
     }, [error]);
 
+    useEffect(() => {
+        console.log('Filtered Campers:', filteredCampers.length);
+    }, [filteredCampers]);
+
+
+
     const handleLoadMore = () => {
-        dispatch(setLoadingMore(true)); // Show loader overlay when loading more
+        dispatch(setLoadingMore(true));
         setTimeout(() => {
             dispatch(incrementVisibleCount());
-            dispatch(setLoadingMore(false)); // Hide loader after items are loaded
-        }, 500); // Simulate network delay
+            dispatch(setLoadingMore(false));
+        }, 500);
     };
-
+    
     const displayedCampers = filteredCampers.slice(0, visibleCount);
+    
+    
 
     return (
         <section className={styles.container}>
             <Toaster position="top-right" reverseOrder={false} />
-            {loading && <Loader />} {/* Show loader only for initial loading */}
-            {loadingMore && <Loader />} {/* Show overlay loader when loading more items */}
+            {loading && <Loader />}
+            {loadingMore && <Loader />}
             <div className={styles.catalog}>
                 <Filters />
                 <div className={styles.rvCardsSection}>
@@ -59,3 +69,5 @@ const Catalog = () => {
 };
 
 export default Catalog;
+
+

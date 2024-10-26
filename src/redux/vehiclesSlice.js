@@ -52,6 +52,21 @@ const vehiclesSlice = createSlice({
                 });
             });
         },
+        clearFilters: (state) => {
+            state.filters.location = '';
+            state.filters.selectedFilters = {
+                AC: false,
+                automatic: false,
+                kitchen: false,
+                TV: false,
+                bathroom: false,
+                van: false,
+                fullyIntegrated: false,
+                alcove: false,
+            };
+            state.visibleCount = 5; // Reset to show first 5 campers
+            state.filteredVehicles = state.vehicles; // Display all vehicles after reset
+        },
         toggleFavorite: (state, action) => {
             const vehicleId = action.payload;
             if (state.favorites.includes(vehicleId)) {
@@ -61,7 +76,7 @@ const vehiclesSlice = createSlice({
             }
         },
         incrementVisibleCount: (state) => {
-            state.visibleCount += 5;
+            state.visibleCount = Math.min(state.visibleCount + 5, state.filteredVehicles.length);
         },
         resetVisibleCount: (state) => {
             state.visibleCount = 5;
@@ -79,7 +94,7 @@ const vehiclesSlice = createSlice({
             .addCase(fetchVehicles.fulfilled, (state, action) => {
                 state.loading = false;
                 state.vehicles = action.payload;
-                state.filteredVehicles = action.payload;
+                state.filteredVehicles = action.payload.slice(0, 5); // Default display of first 5 campers
             })
             .addCase(fetchVehicles.rejected, (state, action) => {
                 state.loading = false;
@@ -88,6 +103,6 @@ const vehiclesSlice = createSlice({
     },
 });
 
-export const { setFilter, setLocation, applyFilters, incrementVisibleCount, toggleFavorite, resetVisibleCount, setLoadingMore } = vehiclesSlice.actions;
+export const { setFilter, setLocation, applyFilters, incrementVisibleCount, toggleFavorite, resetVisibleCount, setLoadingMore, clearFilters } = vehiclesSlice.actions;
 
 export default vehiclesSlice.reducer;

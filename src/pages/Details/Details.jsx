@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Formik, Form, Field } from 'formik';
 import api from '../../services/api'; // Ensure this is correct
 import styles from './Details.module.css'; // Adjust the import path as necessary
 
@@ -28,16 +29,6 @@ const Details = () => {
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
-
-    const featureKeys = [
-        { key: 'AC', label: 'AC' },
-        { key: 'bathroom', label: 'Bathroom' },
-        { key: 'kitchen', label: 'Kitchen' },
-        { key: 'TV', label: 'TV' },
-        { key: 'radio', label: 'Radio' },
-        { key: 'refrigerator', label: 'Refrigerator' },
-        { key: 'microwave', label: 'Microwave' },
-      ];
 
     // Render the camper details
     return (
@@ -75,18 +66,15 @@ const Details = () => {
                 <div className={styles.featuresContainer}>
                     {activeTab === 'features' && (
                         <div className={styles.card}>
-
-  <div className={styles.rvCard__features}>
-    {camper.AC && <span className={styles.rvCard__badge}>AC</span>}
-    {camper.bathroom && <span className={styles.rvCard__badge}>Bathroom</span>}
-    {camper.kitchen && <span className={styles.rvCard__badge}>Kitchen</span>}
-    {camper.TV && <span className={styles.rvCard__badge}>TV</span>}
-    {camper.radio && <span className={styles.rvCard__badge}>Radio</span>}
-    {camper.refrigerator && <span className={styles.rvCard__badge}>Refrigerator</span>}
-    {camper.microwave && <span className={styles.rvCard__badge}>Microwave</span>}
-  </div>
-
-                            {/* Vehicle Details Section */}
+                            <div className={styles.rvCard__features}>
+                                {camper.AC && <span className={styles.rvCard__badge}>AC</span>}
+                                {camper.bathroom && <span className={styles.rvCard__badge}>Bathroom</span>}
+                                {camper.kitchen && <span className={styles.rvCard__badge}>Kitchen</span>}
+                                {camper.TV && <span className={styles.rvCard__badge}>TV</span>}
+                                {camper.radio && <span className={styles.rvCard__badge}>Radio</span>}
+                                {camper.refrigerator && <span className={styles.rvCard__badge}>Refrigerator</span>}
+                                {camper.microwave && <span className={styles.rvCard__badge}>Microwave</span>}
+                            </div>
                             <h3>Vehicle Details</h3>
                             <hr className={styles.separator} />
                             <div className={styles.vehicleDetails}>
@@ -142,16 +130,29 @@ const Details = () => {
                 </div>
 
                 <div className={styles.bookingForm}>
-    <h3>Book your campervan now</h3>
-    <p>Stay connected! We are always ready to help you.</p>
-    <form>
-        <input type="text" placeholder="Name*" required />
-        <input type="email" placeholder="Email*" required />
-        <input type="date" placeholder="Booking date*" required />
-        <textarea placeholder="Comment"></textarea>
-        <button type="submit">Send</button>
-    </form>
-</div>
+                    <h3>Book your campervan now</h3>
+                    <p>Stay connected! We are always ready to help you.</p>
+                    <Formik
+                        initialValues={{ name: '', email: '', bookingDate: '', comment: '' }}
+                        onSubmit={(values, { setSubmitting }) => {
+                            // Handle form submission here
+                            console.log(values);
+                            setSubmitting(false);
+                        }}
+                    >
+                        {({ isSubmitting }) => (
+                            <Form>
+                                <Field type="text" name="name" placeholder="Name*" required />
+                                <Field type="email" name="email" placeholder="Email*" required />
+                                <Field type="date" name="bookingDate" placeholder="Booking date*" required />
+                                <Field as="textarea" name="comment" placeholder="Comment" />
+                                <button type="submit" disabled={isSubmitting}>
+                                    Send
+                                </button>
+                            </Form>
+                        )}
+                    </Formik>
+                </div>
             </div>
         </div>
     );

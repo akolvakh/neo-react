@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Home from './pages/Home/Home';
-import Catalog from './pages/Catalog/Catalog';
-import Details from './pages/Details/Details'; // Import the Details component
+import Header from '../Header/Header';
+import Home from '../../pages/Home/Home';
+import Catalog from '../../pages/Catalog/Catalog';
+import Details from '../../pages/Details/Details'; // Import the Details component
 
-import './styles/colors.module.css';  // Global styles
+import '../../styles/colors.module.css';  // Global styles
 
 function App() {
   return (

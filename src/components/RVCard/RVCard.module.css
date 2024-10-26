@@ -1,0 +1,118 @@
+.rvCard {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    
+    display: flex;
+    gap: 20px; /* Space between image and details */
+}
+
+.rvCard img {
+    width: 292px; /* Fixed width */
+    height: 320px; /* Fixed height */
+    border-radius: 10px;
+    object-fit: cover; /* This ensures the image covers the area without stretching */
+    /* Optionally, you can set max-width and max-height to keep the aspect ratio */
+    max-width: 100%; /* Ensure image is responsive */
+    max-height: 100%; /* Ensure image does not exceed set dimensions */
+}
+
+.rvCard__details {
+    flex-grow: 1;
+}
+
+.rvCard__header {
+    display: flex;
+    justify-content: space-between; /* Aligns items to the left and right */
+    align-items: center; /* Vertically centers items */
+}
+
+.rvCard__title {
+    font-size: 24px; /* Increased size for prominence */
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: black; /* Set title color to black */
+}
+
+/* Adjusting price and heart button */
+.rvCard__actions {
+    display: flex;
+    align-items: center; /* Center the price and button vertically */
+}
+
+.rvCard__price {
+    font-size: 22px; /* Price size */
+    font-weight: bold;
+    color: black; /* Set price color to black */
+    margin-right: 10px; /* Space between price and heart button */
+}
+
+.rvCard__info {
+    display: flex;
+    justify-content: flex-start; /* Aligns both reviews and location to the left */
+    margin-top: 10px; /* Space between header and info */
+}
+
+.rvCard__reviews,
+.rvCard__location {
+    font-size: 14px; /* Size for reviews and location */
+    color: black; /* Set reviews and location color to black */
+    margin-right: 10px; /* Space between reviews and location */
+}
+
+.rvCard__description {
+    margin: 10px 0; /* Margin around description */
+    color: black; /* Set description color to black */
+}
+
+.rvCard__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between badges */
+    margin: 15px 0; /* Margin around features */
+}
+
+.rvCard__badge {
+    background-color: #e9ecef; /* Light background */
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: black; /* Set badge text color to black */
+}
+
+.rvCard__showMoreButton {
+    background-color: #e44848;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px; /* Space above the button */
+}
+
+.rvCard__showMoreButton:hover {
+    background-color: #c33c3c;
+}
+
+
+
+
+.rvCard__favoriteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust size as needed */
+    color: gray; /* Default color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.rvCard__favoriteButton:hover {
+    color: red; /* Change color on hover */
+}
+
+.favorited {
+    color: red; /* Color when it's favorited */
+}

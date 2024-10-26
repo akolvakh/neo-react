@@ -1,0 +1,18 @@
+.iconWrapper {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: var(--background-color);
+    border-radius: 20px;
+    margin: 5px;
+  }
+  
+  .icon {
+    margin-right: 5px;
+  }
+  
+  .label {
+    font-size: 14px;
+    color: var(--font-color-dark);
+  }
+  

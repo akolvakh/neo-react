@@ -1,0 +1,22 @@
+.rvCard {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .rvImage {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .rvName {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .detailsLink {
+    color: #007bff;
+    text-decoration: none;
+  }
+  

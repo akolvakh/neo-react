@@ -1,0 +1,47 @@
+.header {
+  background-color: var(--white-color);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 60px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  left: 30px;
+  color: #000;
+}
+
+.trucks {
+  font-weight: normal;
+}
+
+.nav {
+  margin: 0 auto;
+  display: flex;
+}
+
+.navLink {
+  margin-left: 30px; /* Add equal spacing between links */
+  color: #6C717B; /* Darker color for better contrast */
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navLink:hover {
+  color: #1e90ff; /* Brighter hover color */
+}
+
+.active {
+  color: #E44848; /* Same active link color across all pages */
+  text-decoration: underline;
+  font-size: 16px;
+  margin-left: 30px; /* Add equal spacing between links */
+}
+
+ 

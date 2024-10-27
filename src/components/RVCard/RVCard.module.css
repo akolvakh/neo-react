@@ -54,12 +54,29 @@
     margin-top: 10px; /* Space between header and info */
 }
 
-.rvCard__reviews,
 .rvCard__location {
     font-size: 14px; /* Size for reviews and location */
     color: black; /* Set reviews and location color to black */
     margin-right: 10px; /* Space between reviews and location */
 }
+
+
+.rvCard__reviews {
+    font-size: 14px; /* Size for reviews and location */
+    margin-right: 10px; /* Space between reviews and location */
+    color: black; /* Set reviews and location color to black */
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-flex; /* Keeps icon and text inline */
+    align-items: center; /* Vertically center the icon and text */
+    transition: text-decoration 0.2s ease;
+}
+
+.rvCard__reviews:hover {
+    text-decoration: none;
+}
+
+
 
 .rvCard__description {
     margin: 10px 0; /* Margin around description */

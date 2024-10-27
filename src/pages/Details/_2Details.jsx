@@ -1,5 +1,6 @@
+// Details.jsx
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import api from '../../services/api';
 import CamperInfo from '../../components/CamperInfo/CamperInfo';
@@ -12,18 +13,10 @@ import detailsStyles from './Details.module.css';
 
 const Details = () => {
     const { id } = useParams();
-    const location = useLocation();
-    const [activeTab, setActiveTab] = useState(location.state?.activeTab || 'features');
     const [camper, setCamper] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-
-    useEffect(() => {
-        // Update activeTab when location.state changes
-        if (location.state?.activeTab) {
-            setActiveTab(location.state.activeTab);
-        }
-    }, [location.state]);
+    const [activeTab, setActiveTab] = useState('features');
 
     useEffect(() => {
         const fetchCamperData = async () => {

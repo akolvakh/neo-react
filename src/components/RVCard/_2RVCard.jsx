@@ -8,9 +8,6 @@ import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; /
 import SvgIcon from '../SvgIcon/SvgIcon'; // Import the SvgIcon component
 import styles from './RVCard.module.css';
 
-import { Link } from 'react-router-dom';
-
-
 const RVCard = ({ rv }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -25,15 +22,9 @@ const RVCard = ({ rv }) => {
         navigate(`/details/${rv.id}`);
     };
 
-    const handleReviewsClick = () => {
-        navigate(`/details/${rv.id}`, { state: { activeTab: 'reviews' } });
-    };
-
     const formatPrice = (price) => {
         return price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     };
-
-
 
     const formIcons = {
         alcove: 'alcove',
@@ -63,10 +54,9 @@ const RVCard = ({ rv }) => {
                     </div>
                 </div>
                 <div className={styles.rvCard__info}>
-                                    {/* Link to Details page with Reviews tab active */}
-                                    <div className={styles.rvCard__reviews} onClick={handleReviewsClick}>
-                <SvgIcon path="rating" size={16} /> {rv.rating} ({rv.reviews.length} Reviews)
-            </div>
+                    <div className={styles.rvCard__reviews}>
+                    <SvgIcon path="rating" size={16} /> {rv.rating} ({rv.reviews.length} Reviews)
+                    </div>
                     <div className={styles.rvCard__location}>
                     <SvgIcon path="map" size={16} /> {rv.location}
                     </div>

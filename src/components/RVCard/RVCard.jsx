@@ -61,7 +61,7 @@ const RVCard = ({ rv }) => {
     €{formatPrice(rv.price)}
   </span>
   <FontAwesomeIcon
-    icon={isFavorite ? solidHeart : regularHeart}
+    icon={regularHeart}
     className={`${styles.rvCard__favoriteIcon} ${isFavorite ? styles.favorited : ""}`}
     onClick={handleToggleFavorite}
   />

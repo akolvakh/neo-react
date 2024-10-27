@@ -57,16 +57,44 @@ const vehiclesSlice = createSlice({
             state.filters = { ...state.pendingFilters }; // Apply pending filters to main filters
             const { location, selectedFilters } = state.filters;
             const vehiclesArray = Array.isArray(state.vehicles) ? state.vehicles : [];
+        
+            // Separate the selected filters into boolean and string-based filters
+            const booleanFilters = ["AC", "kitchen", "bathroom", "TV"];
+            const stringFilters = ["automatic", "van", "fullyIntegrated", "alcove"];
+        
             state.filteredVehicles = vehiclesArray.filter((vehicle) => {
+                // Filter by location
                 if (location && !vehicle.location.toLowerCase().includes(location.toLowerCase())) {
                     return false;
                 }
-                return Object.entries(selectedFilters).every(([key, isSelected]) => {
-                    return !isSelected || vehicle[key] === true;
-                });
+        
+                // Apply boolean filters
+                for (const filter of booleanFilters) {
+                    if (selectedFilters[filter] && vehicle[filter] !== true) {
+                        return false;
+                    }
+                }
+        
+                // Apply string-based filters (e.g., form and transmission)
+                if (selectedFilters.automatic && vehicle.transmission !== 'automatic') {
+                    return false;
+                }
+                if (selectedFilters.van && vehicle.form !== 'panelTruck') {
+                    return false;
+                }
+                if (selectedFilters.fullyIntegrated && vehicle.form !== 'fullyIntegrated') {
+                    return false;
+                }
+                if (selectedFilters.alcove && vehicle.form !== 'alcove') {
+                    return false;
+                }
+        
+                return true;
             });
+        
+            console.log("Filtered Vehicles:", state.filteredVehicles);
             state.visibleCount = 5; // Reset to first 5 results
-        },
+        },    
         toggleFavorite: (state, action) => {
             const vehicleId = action.payload;
             if (state.favorites.includes(vehicleId)) {

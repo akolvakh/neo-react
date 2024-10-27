@@ -7,12 +7,18 @@
 }
   
 .rvCard__badge {
-  background-color: #e9ecef; /* Light background */
-  border: 1px solid #ddd;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 14px;
-  color: black; /* Set badge text color to black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  сolor: #333;
+  border-radius: 100px;
+  padding: 12px 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #e9ecef;
 }
   
   .card {

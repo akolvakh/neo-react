@@ -7,10 +7,10 @@ const Gallery = ({ gallery = [], name }) => {
         <div className={styles.photoSection}>
             {gallery.length > 0 ? (
                 gallery.map((image, index) => (
-                    <img key={index} src={image.original} alt={`Camper ${name} ${index}`} />
+                    <img className={styles.photoSectionImage} key={index} src={image.original} alt={`Camper ${name} ${index}`} />
                 ))
             ) : (
-                <p>No images available</p>
+                <p className={styles.photoSectionDescription}>No images available</p>
             )}
         </div>
     );

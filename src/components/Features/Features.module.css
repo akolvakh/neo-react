@@ -3,7 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px; /* Space between badges */
-  margin: 15px 0; /* Margin around features */
+  margin-top: 0px; /* Margin around features */
+  margin-bottom: 100px; /* Margin around features */
 }
   
 .rvCard__badge {
@@ -25,7 +26,7 @@
     background-color: #f5f5f5;
     padding: 20px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    padding: 44px 52px;
     
   }
 
@@ -41,6 +42,9 @@
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    gap: 16px;
   }
   
   .separator {

@@ -11,7 +11,7 @@ const CamperInfo = ({ name, rating, location, price, reviews }) => {
 
     return (
         <div>
-            <h1>{name}</h1>
+            <h1 className={styles.infoTitle}>{name}</h1>
 
             <div className={styles.rvCard__info}>
             <div className={styles.rvCard__reviews}>
@@ -22,7 +22,7 @@ const CamperInfo = ({ name, rating, location, price, reviews }) => {
             </div>
             </div>
 
-            <h2>{formatPrice(price)} €</h2>
+            <h2 className={styles.price}>{formatPrice(price)} €</h2>
         </div>
     );
 };

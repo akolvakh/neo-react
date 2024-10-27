@@ -46,9 +46,11 @@ const Details = () => {
         <div className={detailsStyles.detailsContainer}>
             <Toaster position="top-right" reverseOrder={false} />
             {error && <div>{error}</div>}
+            <div className={detailsStyles.camperTopInfo}>
             <CamperInfo name={camper?.name} rating={camper?.rating} location={camper?.location} price={camper?.price} reviews={camper?.reviews} />
             <Gallery gallery={camper?.gallery} name={camper?.name} />
-            <p>{camper?.description}</p>
+            <p className={detailsStyles.camperDescription}>{camper?.description}</p>
+            </div>
             <div>
                 <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
                 <div className={detailsStyles.flexContainer}>

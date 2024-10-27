@@ -1,26 +1,34 @@
-/* DetailsContainer.module.css */
 .detailsContainer {
-    padding: 118px 170px; /* Left and right padding */
-    margin: auto;
-    background-color: #fff;
-    color: black;
-  }
-  
-  .flexContainer {
-    /* display: flex;
+  padding: 118px 170px;
+  margin: auto;
+  background-color: #fff;
+  color: black;
+}
+
+.flexContainer {
+  /* display: flex;
     justify-content: space-between;
     margin-top: 20px; */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 44px 0 80px;
-    align-items: flex-start;
-    gap: 40px;
-  }
-  
-  .featuresContainer,
-  .reviewsContainer {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 44px 0 80px;
+  align-items: flex-start;
+  gap: 40px;
+}
 
+.featuresContainer,
+.reviewsContainer {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.camperDescription {
+  font-size: 16px;
+  line-height: 24px;
+  color: #475467;
+}
+.camperTopInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0 60px;
+}

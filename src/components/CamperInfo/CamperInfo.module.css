@@ -5,6 +5,14 @@
     
   }
   
+  .infoTitle {
+  margin-right: auto;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
   h2 {
     color: black;
   }
@@ -16,13 +24,33 @@
     margin-top: 10px; /* Space between header and info */
 }
 
-.rvCard__reviews,
+.rvCard__reviews {
+  font-size: 14px; /* Size for reviews and location */
+  color: black; /* Set reviews and location color to black */
+  margin-right: 10px; /* Space between reviews and location */
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+}
+
 .rvCard__location {
-    font-size: 14px; /* Size for reviews and location */
+    font-size: 16px; /* Size for reviews and location */
     color: black; /* Set reviews and location color to black */
     margin-right: 10px; /* Space between reviews and location */
 }
 
+
+
+
+
 .rating {
   color: #FFC531;
+}
+
+.price {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
 }

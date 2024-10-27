@@ -1,16 +1,21 @@
 .tabs {
   display: flex;
   justify-content: flex-start;
-  margin: 20px 0;
+  margin: 0px 0;
   border-bottom: 1px solid #e0e0e0; /* Light gray line across all tabs */
 }
 
 .tab {
-  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 24px;
+  padding-left: 0px;
+
   border: none;
   background: transparent;
   cursor: pointer;
-  font-size: 16px;
+
   color: #333; /* Dark text color */
   position: relative;
   font-weight: bold; /* Make the text bold */
@@ -21,26 +26,25 @@
   margin-right: 20px; /* Add space between tabs */
 }
 
-.tab:hover {
-  color: #ff4757; /* Hover color */
-}
-
 .activeTab {
-  color: #ff4757; /* Active color */
+  font-weight: bold; /* Make the text bold */
   outline: 0px auto -webkit-focus-ring-color;
+
+  display: block;
+  color: #333; /* Dark text color */
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 24px;
+  position: relative;
 }
 
-
- 
 .activeTab::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 5px;
   background-color: #ff4757; /* Red underline */
-  
 }
-
-

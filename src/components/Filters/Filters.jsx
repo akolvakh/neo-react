@@ -2,8 +2,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPendingFilter, setPendingLocation, applyPendingFilters } from '../../redux/vehiclesSlice';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSnowflake, faCar, faUtensils, faTelevision, faRestroom, faBus } from '@fortawesome/free-solid-svg-icons';
+import SvgIcon from '../SvgIcon/SvgIcon'; // Import SvgIcon component
 import styles from './Filters.module.css';
 
 const Filters = () => {
@@ -47,7 +46,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('AC')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faSnowflake} />
+                        <SvgIcon path="ac" size={24} /> {/* Updated with SvgIcon */}
                         <span>AC</span>
                     </label>
                     <label className={`${styles.filterButton} ${selectedFilters.automatic ? styles.active : ''}`}>
@@ -57,7 +56,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('automatic')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faCar} />
+                        <SvgIcon path="transmission" size={24} /> {/* Updated with SvgIcon */}
                         <span>Automatic</span>
                     </label>
                     <label className={`${styles.filterButton} ${selectedFilters.kitchen ? styles.active : ''}`}>
@@ -67,7 +66,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('kitchen')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faUtensils} />
+                        <SvgIcon path="kitchen" size={24} /> {/* Updated with SvgIcon */}
                         <span>Kitchen</span>
                     </label>
                     <label className={`${styles.filterButton} ${selectedFilters.TV ? styles.active : ''}`}>
@@ -77,7 +76,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('TV')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faTelevision} />
+                        <SvgIcon path="tv" size={24} /> {/* Updated with SvgIcon */}
                         <span>TV</span>
                     </label>
                     <label className={`${styles.filterButton} ${selectedFilters.bathroom ? styles.active : ''}`}>
@@ -87,7 +86,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('bathroom')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faRestroom} />
+                        <SvgIcon path="bathroom" size={24} /> {/* Updated with SvgIcon */}
                         <span>Bathroom</span>
                     </label>
                 </div>
@@ -104,7 +103,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('van')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faBus} />
+                        <SvgIcon path="van" size={24} /> {/* Updated with SvgIcon */}
                         <span>Van</span>
                     </label>
                     <label className={`${styles.filterButton} ${selectedFilters.fullyIntegrated ? styles.active : ''}`}>
@@ -114,7 +113,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('fullyIntegrated')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faBus} />
+                        <SvgIcon path="fully" size={24} /> {/* Updated with SvgIcon */}
                         <span>Fully Integrated</span>
                     </label>
                     <label className={`${styles.filterButton} ${selectedFilters.alcove ? styles.active : ''}`}>
@@ -124,7 +123,7 @@ const Filters = () => {
                             onChange={() => handleFilterChange('alcove')}
                             style={{ display: 'none' }}
                         />
-                        <FontAwesomeIcon icon={faBus} />
+                        <SvgIcon path="alcove" size={24} /> {/* Updated with SvgIcon */}
                         <span>Alcove</span>
                     </label>
                 </div>

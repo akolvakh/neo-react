@@ -95,6 +95,7 @@ The project is currently in progress with plans for the following improvements:
 - Adding user authentication for personalized booking and favorites
 - Implementing a backend API for managing RV data and user bookings
 - Enhancing styling and animations for a more polished user experience
+- Implement Mobile First approach and adaptive design
 
 ---
 

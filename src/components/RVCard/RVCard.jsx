@@ -26,6 +26,18 @@ const RVCard = ({ rv }) => {
         return price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     };
 
+    const formIcons = {
+        alcove: 'alcove',
+        panelTruck: 'van',  // Assuming "panelTruck" should use the "van" icon
+        fullyIntegrated: 'fully'
+    };
+
+    const formDisplayNames = {
+        panelTruck: 'Van',
+        alcove: 'Alcove',
+        fullyIntegrated: 'Fully Integrated'
+    };
+
     return (
         <div className={styles.rvCard}>
             <img src={rv.gallery[0].thumb} alt={rv.name} />
@@ -56,11 +68,12 @@ const RVCard = ({ rv }) => {
                             <SvgIcon path="transmission" size={16} /> {rv.transmission.charAt(0).toUpperCase() + rv.transmission.slice(1)}
                         </span>
                     )}
-                    {rv.form && (
-                        <span className={styles.rvCard__badge}>
-                            <SvgIcon path="alcove" size={16} /> {rv.form.charAt(0).toUpperCase() + rv.form.slice(1)}
-                        </span>
-                    )}
+{rv.form && (
+    <span className={styles.rvCard__badge}>
+        <SvgIcon path={formIcons[rv.form] || 'defaultIcon'} size={16} /> 
+        {formDisplayNames[rv.form] || rv.form.charAt(0).toUpperCase() + rv.form.slice(1)}
+    </span>
+)}
                     {rv.engine && (
                         <span className={styles.rvCard__badge}>
                             <SvgIcon path="engine" size={16} /> {rv.engine.charAt(0).toUpperCase() + rv.engine.slice(1)}

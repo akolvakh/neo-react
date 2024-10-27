@@ -3,6 +3,19 @@ import React from 'react';
 import styles from './Features.module.css';
 import SvgIcon from '../SvgIcon/SvgIcon'; // Import the SvgIcon component
 
+
+const formIcons = {
+    alcove: 'alcove',
+    panelTruck: 'van',  // Assuming "panelTruck" should use the "van" icon
+    fullyIntegrated: 'fully'
+};
+
+const formDisplayNames = {
+    panelTruck: 'Van',
+    alcove: 'Alcove',
+    fullyIntegrated: 'Fully Integrated'
+};
+
 const Features = ({ camper }) => {
     return (
         <div className={styles.card}>
@@ -15,7 +28,8 @@ const Features = ({ camper }) => {
                     )}
                     {camper?.form && (
                         <span className={styles.rvCard__badge}>
-                            <SvgIcon path="alcove" size={16} /> {camper.form.charAt(0).toUpperCase() + camper.form.slice(1)}
+                            <SvgIcon path={formIcons[camper?.form] || 'defaultIcon'} size={16} /> 
+                            {formDisplayNames[camper?.form] || camper?.form.charAt(0).toUpperCase() + camper?.form.slice(1)}
                         </span>
                     )}
                     {camper?.engine && (

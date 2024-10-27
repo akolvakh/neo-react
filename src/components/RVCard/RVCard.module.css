@@ -1,151 +1,157 @@
 /* General card styling */
 .rvCard {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-  }
-  
-  /* Image styling within the card */
-  .rvCard img {
-    width: 292px;
-    height: 320px;
-    border-radius: 10px;
-    object-fit: cover;
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
-  /* Details section styling */
-  .rvCard__details {
-    flex-grow: 1;
-  }
-  
-  .rvCard__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .rvCard__title,
-  .rvCard__price,
-  .rvCard__description,
-  .rvCard__badge {
-    color: black;
-  }
-  
-  .rvCard__title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    margin-top: 0px;
-  }
-  
-  /* Price and action buttons */
-  .rvCard__actions {
-    display: flex;
-    align-items: center;
-  }
-  
-  .rvCard__price {
-    font-size: 22px;
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  /* Info section with reviews and location */
-  .rvCard__info {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
-    
-  }
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
 
+/* Image styling within the card */
+.rvCard img {
+  width: 292px;
+  height: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
 
-  
-  .rvCard__reviews,
-  .rvCard__location {
-    font-size: 14px;
-    color: black;
-    margin-right: 10px;
-  }
-  
-  .rvCard__reviews {
-    text-decoration: underline;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    transition: text-decoration 0.2s ease;
-  }
-  
-  .rvCard__reviews:hover {
-    text-decoration: none;
-  }
-  
-  /* Description styling */
-  .rvCard__description {
-    margin: 10px 0;
-    color: var(--font-color-dark);
-  }
-  
-  /* Features and badges */
-  .rvCard__features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 15px 0;
-  }
-  
-  .rvCard__badge {
-    background-color: #e9ecef;
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-  }
-  
-  /* Show More Button */
-  .rvCard__showMoreButton {
-    background-color: #e44848;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .rvCard__showMoreButton:hover {
-    background-color: #c33c3c;
-  }
-  
-  /* Favorite Button */
+/* Details section styling */
+.rvCard__details {
+  flex-grow: 1;
+}
 
-  .rvCard__favoriteIcon {
-    font-size: 24px;
-    color: grey;
-    cursor: pointer;
-    transition: color 0.3s ease, border 0.3s ease;
-  }
-  
-  .rvCard__favoriteIcon:hover {
-    color: #c33c3c;
-  }
-  
-  /* Favorited state */
-  .favorited {
-    color: #c33c3c; /* Make the fill transparent */
-    -webkit-text-stroke: 1px #c33c3c; /* Add red outline */
-    text-stroke: 1px #c33c3c; /* Fallback for browsers */
-    transform: scale(1.1); /* Slight scale-up */
-    transition: transform 0.2s ease, -webkit-text-stroke 0.3s ease, color 0.3s ease;
-  }
+.rvCard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.rvCard__title,
+.rvCard__price,
+.rvCard__description,
+.rvCard__badge {
+  color: black;
+}
 
-  .rating {
-  color: #FFC531;
+.rvCard__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+/* Price and action buttons */
+.rvCard__actions {
+  display: flex;
+  align-items: center;
+}
+
+.rvCard__price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-right: 10px;
+}
+
+/* Info section with reviews and location */
+.rvCard__info {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.rvCard__reviews,
+.rvCard__location {
+  font-size: 14px;
+  color: black;
+  margin-right: 10px;
+}
+
+.rvCard__reviews {
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: text-decoration 0.2s ease;
+}
+
+.rvCard__reviews:hover {
+  text-decoration: none;
+}
+
+/* Description styling */
+.rvCard__description {
+  margin: 10px 0;
+  color: var(--font-color-dark);
+}
+
+/* Features and badges */
+.rvCard__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.rvCard__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  сolor: #333;
+  border-radius: 100px;
+  padding: 12px 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #e9ecef;
+}
+
+/* Show More Button */
+.rvCard__showMoreButton {
+  background-color: #e44848;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.rvCard__showMoreButton:hover {
+  background-color: #c33c3c;
+}
+
+/* Favorite Button */
+
+.rvCard__favoriteIcon {
+  font-size: 24px;
+  color: grey;
+  cursor: pointer;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+
+.rvCard__favoriteIcon:hover {
+  color: #c33c3c;
+}
+
+/* Favorited state */
+.favorited {
+  color: #c33c3c; /* Make the fill transparent */
+  -webkit-text-stroke: 1px #c33c3c; /* Add red outline */
+  text-stroke: 1px #c33c3c; /* Fallback for browsers */
+  transform: scale(1.1); /* Slight scale-up */
+  transition: transform 0.2s ease, -webkit-text-stroke 0.3s ease,
+    color 0.3s ease;
+}
+
+.rating {
+  color: #ffc531;
 }

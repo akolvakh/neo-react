@@ -160,6 +160,7 @@
   color: var(--font-color-dark);
   letter-spacing: -0.004em;
   margin-top: 8px;
+  text-align: center;
 }
 
 .label {

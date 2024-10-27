@@ -22,13 +22,18 @@
   background-color: white;
   color: #333;
   border: 1px solid #ddd;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 15px 32px;
+  border-radius: 200px;
   cursor: pointer;
   text-align: center;
   margin: 20px auto;
   display: block;
+  min-width: 145px;
 }
+
+
+    
+    
 
 .loadMoreButton:hover {
   background-color: #f0f0f0;

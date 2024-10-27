@@ -83,7 +83,8 @@ const RVCard = ({ rv }) => {
             <SvgIcon path="map" size={16}  /> {rv.location}
           </div>
         </div>
-        <p className={styles.rvCard__description}>{rv.description}</p>
+        <p className={styles.rvCard__description}>{rv.description.length > 80 ? `${rv.description.substring(0, 75)}...` : rv.description}</p>
+
         <div className={styles.rvCard__features}>
           {rv.transmission && (
             <span className={styles.rvCard__badge}>

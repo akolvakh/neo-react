@@ -1,5 +1,3 @@
-/* Reviews.module.css */
-
 .reviewList {
   display: flex;
   flex-direction: column;
@@ -7,16 +5,12 @@
   padding: 0px;
 }
 
-
-
 .reviewItem {
-
   border-radius: 8px;
-
   margin-bottom: 0px;
-  display: flex;
+  /* display: flex; */
+  display: block;
   align-items: flex-start;
-
   flex-wrap: wrap;
 }
 .reviewerBox {
@@ -25,8 +19,6 @@
   align-items: center;
   display: flex;
 }
-
-
 
 .reviewerAvatar {
   width: 60px;

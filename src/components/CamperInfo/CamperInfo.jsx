@@ -15,7 +15,7 @@ const CamperInfo = ({ name, rating, location, price, reviews }) => {
 
             <div className={styles.rvCard__info}>
             <div className={styles.rvCard__reviews}>
-            <SvgIcon path="rating" size={16} /> {rating} ({reviews.length} Reviews)
+            <SvgIcon path="rating" size={16} className={styles.rating} /> {rating} ({reviews.length} Reviews)
             </div>
             <div className={styles.rvCard__location}>
             <SvgIcon path="map" size={16} /> {location}

@@ -60,22 +60,27 @@ const RVCard = ({ rv }) => {
   <span className={styles.rvCard__price}>
     €{formatPrice(rv.price)}
   </span>
-  <FontAwesomeIcon
-    icon={regularHeart}
-    className={`${styles.rvCard__favoriteIcon} ${isFavorite ? styles.favorited : ""}`}
-    onClick={handleToggleFavorite}
+<div 
+  onClick={handleToggleFavorite}
+  className={`${styles.rvCard__favoriteIconWrapper} ${isFavorite ? styles.favorited : ""}`}
+>
+  <SvgIcon
+    path="like"  // Ensure this matches the correct ID in your SVG sprite
+    size={24}     // Adjust size as needed
+    className={ `${styles.rvCard__favoriteIcon} ${isFavorite ? styles.favorited : ""}`}
   />
+</div>
 </div>
 
         </div>
         <div className={styles.rvCard__info}>
           {/* Link to Details page with Reviews tab active */}
           <div className={styles.rvCard__reviews} onClick={handleReviewsClick}>
-            <SvgIcon path="rating" size={16} /> {rv.rating} ({rv.reviews.length}{" "}
+            <SvgIcon path="rating" size={16} className={styles.rating} /> {rv.rating} ({rv.reviews.length}{" "}
             Reviews)
           </div>
           <div className={styles.rvCard__location}>
-            <SvgIcon path="map" size={16} /> {rv.location}
+            <SvgIcon path="map" size={16}  /> {rv.location}
           </div>
         </div>
         <p className={styles.rvCard__description}>{rv.description}</p>

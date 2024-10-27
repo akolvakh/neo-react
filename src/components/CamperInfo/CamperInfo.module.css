@@ -22,3 +22,7 @@
     color: black; /* Set reviews and location color to black */
     margin-right: 10px; /* Space between reviews and location */
 }
+
+.rating {
+  color: #FFC531;
+}

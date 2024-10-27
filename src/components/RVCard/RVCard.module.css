@@ -40,6 +40,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
+    margin-top: 0px;
   }
   
   /* Price and action buttons */
@@ -59,7 +60,10 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 10px;
+    
   }
+
+
   
   .rvCard__reviews,
   .rvCard__location {
@@ -83,6 +87,7 @@
   /* Description styling */
   .rvCard__description {
     margin: 10px 0;
+    color: var(--font-color-dark);
   }
   
   /* Features and badges */
@@ -139,3 +144,8 @@
     transform: scale(1.1); /* Slight scale-up */
     transition: transform 0.2s ease, -webkit-text-stroke 0.3s ease, color 0.3s ease;
   }
+
+
+  .rating {
+  color: #FFC531;
+}

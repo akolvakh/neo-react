@@ -1,46 +1,29 @@
+/* Filters.module.css */
+
 .filtersSection {
   padding: 20px;
   margin-bottom: 20px;
 }
 
-.filtersSection h3, .filtersSection h4 {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.filterButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 112px;
-  height: 96px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.filterButton:hover {
-  background-color: #eee;
+.filtersSection h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 24px;
   color: #000;
-  border-color: #e44848;
 }
 
-.filterButton.active {
-  border: 2px solid red;
+.filtersSection h4 {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
 }
 
 .filtersSection input {
   padding: 10px;
   width: 100%;
-  margin-bottom: 20px;
   border-radius: 5px;
-  border: 1px solid #ddd;
-  background-color: #e9ecef;
+  border: 0px solid #ddd;
   color: #333;
 }
 
@@ -48,12 +31,103 @@
   color: #999;
 }
 
-.equipmentButtons, .typeButtons {
+/* Filter Button Styling */
+.filterButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  height: 96px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  color: #333;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.filterButton:hover {
+  color: #e44848;
+  border-color: #e44848;
+}
+
+.filterButton.active {
+  border: 2px solid red;
+}
+
+.filterButton svg {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Icon Hover Effect */
+.iconHoverEffect {
+  color: inherit;
+}
+
+/* Filter Button Groupings */
+.equipmentButtons,
+.typeButtons,
+.transmissionButtons,
+.engineButtons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 10px;
 }
 
+/* Divider Styling */
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+/* Location Input with Icon */
+.locationInputWrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
+.location {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  border: 0px solid #ddd;
+}
+
+.locationIcon {
+  margin-right: 8px;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.locationInput {
+  border: none;
+  background: none;
+  
+  outline: none;
+  color: #333;
+  width: 100%;
+  font-size: 16px;
+  padding: 0;
+}
+
+.locationInput::placeholder {
+  color: #999;
+}
+
+/* Search Button */
 .searchButton {
   background-color: #e44848;
   color: white;
@@ -62,91 +136,40 @@
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
-  width: auto;
   margin-top: 20px;
+  width: auto;
 }
 
 .searchButton:hover {
   background-color: #c33c3c;
 }
 
-.divider {
-  border: 0;
-  height: 1px;
-  background-color: #ddd;
-  margin: 10px 0;
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--font-color-dark);
+  letter-spacing: -0.004em;
+  margin-top: 0px;
+}
+
+.titleFilter {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--font-color-dark);
+  letter-spacing: -0.004em;
+  margin-top: 8px;
+}
+
+.label {
+  color: var(--font-color-dark);
+  margin-bottom: 8px;
+  font-weight: 400;
 }
 
 
 
-
-.filtersContainer {
-  padding: 16px;
-}
-
-.filterSection h4 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.chevronIcon {
-  margin-left: 8px;
-}
-
-.equipmentButtons, .typeButtons, .transmissionButtons, .engineButtons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-
-.active {
-  border: 2px solid red;
-}
-
-
-
-.filtersSection {
-    padding: 16px;
-}
-
-.filterSection h4 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.chevronIcon {
-    margin-left: 8px;
-    font-size: 0.8em;
-}
-
-.equipmentButtons, .typeButtons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.filterButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.filterButton.active {
-    border: 2px solid red;
+.filtersSubgroup {
+  padding: 40px 0;
 }

@@ -5,3 +5,7 @@
   stroke: currentColor;
   fill: currentColor;
 }
+
+.filterButton:hover .iconHoverEffect {
+  color: #e44848;
+}

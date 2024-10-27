@@ -1,22 +1,20 @@
-/* Gallery.module.css */
 .photoSection {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
-  }
-  
-  .photoSectionImage {
-    display: block;
-    width: 100%;
-    height: 312px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
 
-  .photoSectionDescription {
-    font-size: 16px;
-    line-height: 24px;
-    color: #475467;
-  }
-  
+.photoSectionImage {
+  display: block;
+  width: 100%;
+  height: 312px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.photoSectionDescription {
+  font-size: 16px;
+  line-height: 24px;
+  color: #475467;
+}

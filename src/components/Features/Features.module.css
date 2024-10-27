@@ -1,18 +1,17 @@
-/* Features.module.css */
 .rvCard__features {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Space between badges */
-  margin-top: 0px; /* Margin around features */
-  margin-bottom: 100px; /* Margin around features */
+  gap: 10px;
+  margin-top: 0px;
+  margin-bottom: 100px;
 }
-  
+
 .rvCard__badge {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  сolor: #333;
+  color: #333;
   border-radius: 100px;
   padding: 12px 18px;
   text-transform: capitalize;
@@ -21,34 +20,28 @@
   line-height: 24px;
   background-color: #e9ecef;
 }
-  
-  .card {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    padding: 44px 52px;
-    
-  }
 
+.card {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  padding: 44px 52px;
+}
 
+.vehicleDetails {
+  margin-top: 20px;
+}
 
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-weight: 500;
+  text-transform: capitalize;
+  gap: 16px;
+}
 
-  
-  .vehicleDetails {
-    margin-top: 20px;
-  }
-  
-  .detailItem {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-weight: 500;
-    text-transform: capitalize;
-    gap: 16px;
-  }
-  
-  .separator {
-    border: 1px solid #ccc;
-    margin: 10px 0;
-  }
-  
+.separator {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}

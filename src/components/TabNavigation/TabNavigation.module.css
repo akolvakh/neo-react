@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   margin: 0px 0;
-  border-bottom: 1px solid #e0e0e0; /* Light gray line across all tabs */
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .tab {
@@ -11,27 +11,24 @@
   line-height: 24px;
   padding-bottom: 24px;
   padding-left: 0px;
-
   border: none;
   background: transparent;
   cursor: pointer;
-
-  color: #333; /* Dark text color */
+  color: #333;
   position: relative;
-  font-weight: bold; /* Make the text bold */
-  transition: color 0.3s ease; /* Smooth color transition */
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .tab:not(:last-child) {
-  margin-right: 20px; /* Add space between tabs */
+  margin-right: 20px;
 }
 
 .activeTab {
-  font-weight: bold; /* Make the text bold */
+  font-weight: bold;
   outline: 0px auto -webkit-focus-ring-color;
-
   display: block;
-  color: #333; /* Dark text color */
+  color: #333;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
@@ -46,5 +43,5 @@
   left: 0;
   right: 0;
   height: 5px;
-  background-color: #ff4757; /* Red underline */
+  background-color: #ff4757;
 }

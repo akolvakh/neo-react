@@ -10,10 +10,7 @@
   right: 0;
   top: 0;
   z-index: 100;
-  
 }
-
-
 
 .logo {
   font-size: 24px;
@@ -33,20 +30,18 @@
 }
 
 .navLink {
-  margin-left: 30px; /* Add equal spacing between links */
-  color: #101828; /* Darker color for better contrast */
+  margin-left: 30px;
+  color: #101828;
   text-decoration: none;
   font-size: 16px;
 }
 
 .navLink:hover {
-  color: #D84343; /* Brighter hover color */
+  color: #d84343;
 }
 
 .active {
-  color: #E44848; /* Same active link color across all pages */
+  color: #e44848;
   font-size: 16px;
-  margin-left: 30px; /* Add equal spacing between links */
+  margin-left: 30px;
 }
-
- 

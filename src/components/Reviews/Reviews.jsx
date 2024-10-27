@@ -1,4 +1,3 @@
-// Reviews.jsx
 import React from "react";
 import styles from "./Reviews.module.css";
 
@@ -6,7 +5,6 @@ const Reviews = ({ reviews }) => {
   return (
     <ul className={styles.reviewList}>
       {reviews.map((review, index) => {
-        // Define reviewerInitial here based on reviewer's name
         const reviewerInitial = review.reviewer_name.charAt(0).toUpperCase();
 
         return (
@@ -22,11 +20,9 @@ const Reviews = ({ reviews }) => {
                 </span>
               </div>
             </div>
-            
             <div className={styles.reviewerDetails}>
-                <p className={styles.reviewText}>{review.comment}</p>
-              </div>
-              
+              <p className={styles.reviewText}>{review.comment}</p>
+            </div>
           </li>
         );
       })}

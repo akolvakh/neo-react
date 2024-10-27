@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   fetchVehicles,
   incrementVisibleCount,
-  resetVisibleCount,
   setLoadingMore,
   clearFilters,
 } from "../../redux/vehiclesSlice";
@@ -25,7 +24,7 @@ const Catalog = () => {
 
   useEffect(() => {
     dispatch(fetchVehicles());
-    dispatch(clearFilters()); // Reset filters and visible count on page load
+    dispatch(clearFilters());
   }, [dispatch]);
 
   useEffect(() => {
@@ -66,21 +65,16 @@ const Catalog = () => {
     <section className={styles.container}>
       <Toaster position="top-right" reverseOrder={false} />
 
-      {/* Show initial loader */}
       {loading && <Loader />}
-
-      {/* Show overlay loader while loading more items */}
       {loadingMore && <Loader />}
 
       <div className={styles.catalog}>
         <Filters />
         <div className={styles.rvCardsSection}>
-          {/* Render RV cards based on visible count */}
           {displayedCampers.map((rv) => (
             <RVCard key={rv.id} rv={rv} />
           ))}
 
-          {/* Show Load More button only if visibleCount is less than the length of filteredCampers */}
           {!loading && visibleCount < filteredCampers.length && (
             <button className={styles.loadMoreButton} onClick={handleLoadMore}>
               Load more

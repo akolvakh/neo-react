@@ -11,11 +11,9 @@
 
 .primary {
   background-color: var(--secondary-color);
-  /* Red color */
   color: var(--white-color);
 }
 
 .button:hover {
   background-color: #cc3737;
-  /* Darker shade of red */
 }

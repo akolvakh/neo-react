@@ -1,4 +1,3 @@
-/* General card styling */
 .rvCard {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -8,7 +7,6 @@
   gap: 20px;
 }
 
-/* Image styling within the card */
 .rvCard img {
   width: 292px;
   height: 320px;
@@ -18,7 +16,6 @@
   max-height: 100%;
 }
 
-/* Details section styling */
 .rvCard__details {
   flex-grow: 1;
 }
@@ -44,7 +41,6 @@
   margin-top: 0px;
 }
 
-/* Price and action buttons */
 .rvCard__actions {
   display: flex;
   align-items: center;
@@ -57,7 +53,6 @@
   margin-right: 10px;
 }
 
-/* Info section with reviews and location */
 .rvCard__info {
   display: flex;
   justify-content: flex-start;
@@ -83,13 +78,11 @@
   text-decoration: none;
 }
 
-/* Description styling */
 .rvCard__description {
   margin: 10px 0;
   color: var(--font-color-dark);
 }
 
-/* Features and badges */
 .rvCard__features {
   display: flex;
   flex-wrap: wrap;
@@ -112,7 +105,6 @@
   background-color: #e9ecef;
 }
 
-/* Show More Button */
 .rvCard__showMoreButton {
   background-color: #e44848;
   color: white;
@@ -129,8 +121,6 @@
   background-color: #c33c3c;
 }
 
-/* Favorite Button */
-
 .rvCard__favoriteIcon {
   font-size: 24px;
   color: grey;
@@ -142,12 +132,11 @@
   color: #c33c3c;
 }
 
-/* Favorited state */
 .favorited {
-  color: #c33c3c; /* Make the fill transparent */
-  -webkit-text-stroke: 1px #c33c3c; /* Add red outline */
-  text-stroke: 1px #c33c3c; /* Fallback for browsers */
-  transform: scale(1.1); /* Slight scale-up */
+  color: #c33c3c;
+  -webkit-text-stroke: 1px #c33c3c;
+  text-stroke: 1px #c33c3c;
+  transform: scale(1.1);
   transition: transform 0.2s ease, -webkit-text-stroke 0.3s ease,
     color 0.3s ease;
 }

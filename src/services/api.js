@@ -11,10 +11,10 @@ const options = {
 export const fetchCampers = async () => {
   try {
     const response = await axios.get(`${BASE_URL}campers`, options);
-    return response.data; // Returns the array of campers
+    return response.data;
   } catch (error) {
     console.error("API Error:", error);
-    throw error; // Propagate the error for handling
+    throw error;
   }
 };
 
@@ -22,34 +22,29 @@ export const fetchCampers = async () => {
 const fetchCamperDetails = async (camperId) => {
   try {
     const response = await axios.get(`${BASE_URL}campers/${camperId}`, options);
-    return response.data; // Returns the camper details
+    return response.data;
   } catch (error) {
-    console.error('API Error:', error);
-    throw error; // Propagate the error for handling
+    console.error("API Error:", error);
+    throw error;
   }
 };
 
 export const fetchVehicles = async (filters) => {
-  // Assume your API endpoint is something like `/api/vehicles`
-  // You may need to adjust this based on how your API works
-  const response = await fetch('/campers', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(filters),
+  const response = await fetch("/campers", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(filters),
   });
   if (!response.ok) {
-      throw new Error('Failed to fetch vehicles');
+    throw new Error("Failed to fetch vehicles");
   }
   return await response.json();
 };
-
 
 export default {
   fetchCampers,
   fetchCamperDetails,
   fetchVehicles,
 };
-
-

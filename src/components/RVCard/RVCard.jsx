@@ -2,14 +2,10 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../../redux/vehiclesSlice";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons"; // Filled heart
-import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons"; // Regular heart
-import SvgIcon from "../SvgIcon/SvgIcon"; // Import the SvgIcon component
+import SvgIcon from "../SvgIcon/SvgIcon";
 import styles from "./RVCard.module.css";
-import Button from '../../components/Button/Button';
+import Button from "../../components/Button/Button";
 
-import { Link } from "react-router-dom";
 
 const RVCard = ({ rv }) => {
   const dispatch = useDispatch();
@@ -40,7 +36,7 @@ const RVCard = ({ rv }) => {
 
   const formIcons = {
     alcove: "alcove",
-    panelTruck: "van", // Assuming "panelTruck" should use the "van" icon
+    panelTruck: "van",
     fullyIntegrated: "fully",
   };
 
@@ -57,34 +53,39 @@ const RVCard = ({ rv }) => {
         <div className={styles.rvCard__header}>
           <h3 className={styles.rvCard__title}>{rv.name}</h3>
           <div className={styles.rvCard__actions}>
-  <span className={styles.rvCard__price}>
-    €{formatPrice(rv.price)}
-  </span>
-<div 
-  onClick={handleToggleFavorite}
-  className={`${styles.rvCard__favoriteIconWrapper} ${isFavorite ? styles.favorited : ""}`}
->
-  <SvgIcon
-    path="like"  // Ensure this matches the correct ID in your SVG sprite
-    size={24}     // Adjust size as needed
-    className={ `${styles.rvCard__favoriteIcon} ${isFavorite ? styles.favorited : ""}`}
-  />
-</div>
-</div>
-
+            <span className={styles.rvCard__price}>
+              €{formatPrice(rv.price)}
+            </span>
+            <div
+              onClick={handleToggleFavorite}
+              className={`${styles.rvCard__favoriteIconWrapper} ${
+                isFavorite ? styles.favorited : ""
+              }`}
+            >
+              <SvgIcon
+                path="like"
+                size={24}
+                className={`${styles.rvCard__favoriteIcon} ${
+                  isFavorite ? styles.favorited : ""
+                }`}
+              />
+            </div>
+          </div>
         </div>
         <div className={styles.rvCard__info}>
-          {/* Link to Details page with Reviews tab active */}
           <div className={styles.rvCard__reviews} onClick={handleReviewsClick}>
-            <SvgIcon path="rating" size={16} className={styles.rating} /> {rv.rating} ({rv.reviews.length}{" "}
-            Reviews)
+            <SvgIcon path="rating" size={16} className={styles.rating} />{" "}
+            {rv.rating} ({rv.reviews.length} Reviews)
           </div>
           <div className={styles.rvCard__location}>
-            <SvgIcon path="map" size={16}  /> {rv.location}
+            <SvgIcon path="map" size={16} /> {rv.location}
           </div>
         </div>
-        <p className={styles.rvCard__description}>{rv.description.length > 80 ? `${rv.description.substring(0, 75)}...` : rv.description}</p>
-
+        <p className={styles.rvCard__description}>
+          {rv.description.length > 80
+            ? `${rv.description.substring(0, 75)}...`
+            : rv.description}
+        </p>
         <div className={styles.rvCard__features}>
           {rv.transmission && (
             <span className={styles.rvCard__badge}>
@@ -153,7 +154,11 @@ const RVCard = ({ rv }) => {
           )}
         </div>
         <div>
-          <Button label="Show More" variant="primary" onClick={handleShowMore} />
+          <Button
+            label="Show More"
+            variant="primary"
+            onClick={handleShowMore}
+          />
         </div>
       </div>
     </div>

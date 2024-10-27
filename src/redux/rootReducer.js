@@ -1,9 +1,8 @@
-import { combineReducers } from '@reduxjs/toolkit';
-import vehiclesReducer from './vehiclesSlice'; // Adjust this path if necessary
+import { combineReducers } from "@reduxjs/toolkit";
+import vehiclesReducer from "./vehiclesSlice";
 
 const rootReducer = combineReducers({
-    vehicles: vehiclesReducer,
-    // Add other reducers here
+  vehicles: vehiclesReducer,
 });
 
 export default rootReducer;

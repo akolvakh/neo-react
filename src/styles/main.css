@@ -10,11 +10,11 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  --font: Inter, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --font: Inter, sans-serif;
   --primary-color: #101828;
   --secondary-color: #e44848;
   --accent-color: #ffc531;
@@ -40,13 +40,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Remove the Flexbox properties */
-  /* display: flex; */
-  /* place-items: center; */
+
   min-width: 320px;
   min-height: 100vh;
-  opacity: 1; /* Ensure opacity is set to 1 */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  opacity: 1;
+  overflow-x: hidden;
 }
 
 code {

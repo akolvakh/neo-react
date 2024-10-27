@@ -1,11 +1,9 @@
-/* CamperInfo.module.css */
 .infoLine {
-    font-size: 14px;
-    margin-bottom: 10px;
-    
-  }
-  
-  .infoTitle {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.infoTitle {
   margin-right: auto;
   font-size: 24px;
   line-height: 32px;
@@ -13,21 +11,20 @@
   margin-bottom: 8px;
 }
 
-  h2 {
-    color: black;
-  }
-  
-  
-  .rvCard__info {
-    display: flex;
-    justify-content: flex-start; /* Aligns both reviews and location to the left */
-    margin-top: 10px; /* Space between header and info */
+h2 {
+  color: black;
+}
+
+.rvCard__info {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
 }
 
 .rvCard__reviews {
-  font-size: 14px; /* Size for reviews and location */
-  color: black; /* Set reviews and location color to black */
-  margin-right: 10px; /* Space between reviews and location */
+  font-size: 14px;
+  color: black;
+  margin-right: 10px;
   text-decoration: underline;
   display: flex;
   align-items: center;
@@ -36,17 +33,13 @@
 }
 
 .rvCard__location {
-    font-size: 16px; /* Size for reviews and location */
-    color: black; /* Set reviews and location color to black */
-    margin-right: 10px; /* Space between reviews and location */
+  font-size: 16px;
+  color: black;
+  margin-right: 10px;
 }
 
-
-
-
-
 .rating {
-  color: #FFC531;
+  color: #ffc531;
 }
 
 .price {

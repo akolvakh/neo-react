@@ -8,7 +8,7 @@ const SvgIcon = ({ path, width, height, size = 20, className = '' }) => (
     className={clsx(`icon-${path}`, className)}
     style={{ fill: 'currentColor' }} // Make sure it inherits the color
   >
-    <use href={`../src/assets/sprite.svg#icon-${path}`} />
+    <use href={`/src/assets/sprite.svg#icon-${path}`} />
   </svg>
 );
 

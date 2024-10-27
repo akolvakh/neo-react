@@ -16,7 +16,6 @@ const RVCard = ({ rv }) => {
 
   const handleToggleFavorite = () => {
     dispatch(toggleFavorite(rv.id));
-    console.log("Favorite toggled:", rv.id);
   };
 
   const handleShowMore = () => {

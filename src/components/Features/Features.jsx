@@ -15,7 +15,6 @@ const formDisplayNames = {
 };
 
 const Features = ({ camper }) => {
-  console.log(camper);
   return (
     <div className={styles.card}>
       <div className={styles.rvCard__features}>

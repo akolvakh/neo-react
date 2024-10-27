@@ -33,24 +33,6 @@ const Catalog = () => {
     }
   }, [error]);
 
-  useEffect(() => {
-    console.log("Filtered Campers:", filteredCampers.length);
-  }, [filteredCampers]);
-
-  useEffect(() => {
-    console.log("Loading:", loading);
-    console.log("Loading More:", loadingMore);
-    console.log("Visible Count:", visibleCount);
-    console.log("Filtered Campers Length:", filteredCampers.length);
-  }, [loading, loadingMore, visibleCount, filteredCampers]);
-
-  useEffect(() => {
-    if (!loading) {
-      console.log("Final Filtered Campers:", filteredCampers);
-      console.log("Final Visible Count:", visibleCount);
-    }
-  }, [loading, filteredCampers, visibleCount]);
-
   const handleLoadMore = () => {
     dispatch(setLoadingMore(true));
     setTimeout(() => {

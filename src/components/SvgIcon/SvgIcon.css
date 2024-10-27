@@ -1,0 +1,7 @@
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  stroke-width: 0;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}

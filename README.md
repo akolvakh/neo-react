@@ -1,100 +1,116 @@
-# goit-neo-test-task
 
-## Загальна інформація:
+# TravelTrucks 🚐
 
-Мета проєкту – створити фронтенд частину веб-додатку для компанії "TravelTrucks", яка займається орендою кемперів. Веб-додаток повинен включати кілька сторінок, серед яких домашня сторінка, сторінка каталогу і сторінка окремого кемпера з відгуками і формою для бронювання.
+[Live Demo 🔗](https://goit-neo-test-task-pi.vercel.app/)
 
-Для реалізації функціоналу роботи з оголошеннями про кемпери у вашому фронтенд-додатку, використовуйте готовий бекенд API, який доступний за посиланням: https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers
+---
 
-## Основні його ендпоінти:
+## Table of Contents 📑
 
-- `GET /campers` для отримання всіх оголошень (можна додати параметри для фільтрації)
-- `GET /campers/:id` для отримання деталей оголошення за його `ID`
+- [About the Project 📚](#about-the-project)
+- [Screenshots 📷](#screenshots)
+- [Technologies Used ☕️ 🐍 ⚛️](#technologies-used)
+- [Setup / Installation 💻](#setup--installation)
+- [Approach 🚶](#approach)
+- [Status 📶](#status)
+- [Credits 📝](#credits)
+- [License ©️](#license)
 
-## Вимоги до проєкту:
+---
 
-### 1. Фреймворк та бібліотеки:
+## About the Project 📚
 
-- Робота виконана з використанням бандлеру Vite на React.
-- Redux для управління станом.
-- React Router для маршрутизації.
-- Для запитів використовується бібліотека Axios.
-- Будь-яка CSS бібліотека на вибір (наприклад, CSS модулі, styled-components, MUI тощо).
+**TravelTrucks** is a web application designed to help users discover, book, and review recreational vehicles (RVs) for travel and adventure. The project aims to streamline the process of browsing RVs with filter options, favoriting them, and booking directly through a smooth, user-friendly interface. 
 
-### 2. Основні сторінки:
+### Features:
+- Catalog of RVs with detailed information on each
+- Filtering and search functionality based on user preferences
+- Detailed views for individual RVs with reviews, ratings, and amenities
+- Favorite button to add RVs to a personal list
+- Responsive design for mobile and desktop users
 
-- `Домашня сторінка`: повинна містити банер з основним закликом до дії.
-- `Каталог`: сторінка, де відображаються всі доступні транспортні засоби з можливістю фільтрації за певними критеріями (локація, тип транспорту, наявність кондиціонера, кухні тощо) та можливістю додати кемпер до обраних.
-- `Сторінка окремого кемпера`: сторінка з детальним описом обраного кемпера, галереєю фотографій, відгуками користувачів, формою для бронювання. Для опиcу характеристик використовуй наступні властивості, якщо вони присутні на данному кемпері: transmission, engine, AC, bathroom, kitchen, TV, radio, refrigerator, microwave, gas, water. Для опиcу деталей використовуй наступні властивості: form, length, width, height, tank, consumption.
+---
 
-### 3. Маршрутизація:
+## Screenshots 📷
 
-- `/` - Домашня сторінка.
-- `/catalog` - Сторінка каталогу.
-- `/catalog/:id`- Сторінка окремого кемпера.
+![Catalog Page](./public/screenshots/catalog_page.png)
+*Image of the catalog page with RV listings.*
 
-### 4. Стан додатку:
+![Details Page](./public/screenshots/details_page.png)
+*Example of the details page for a selected RV.*
 
-- Використовувати Redux для управління станом.
-- Створити глобальний стан для зберігання списку транспортних засобів, стану фільтрів та списку обраних.
-- При відправці запиту за фільтрованими транспортними засобами важливо попередньо скинути попередні результати пошуку, щоб забезпечити актуальність та точність відображуваних даних відповідно до нових критеріїв фільтрації.
+![Booking Form](./public/screenshots/booking_form.png)
+*The booking form for RV rentals.*
 
-### 5. Функціональні вимоги:
+---
 
-- `Перехід на сторінку каталогу`: користувач повинен мати можливість натиснути на кнопку "View Now" на головній сторінці, щоб перейти на сторінку каталогу.
-- `Фільтрація транспортних засобів`: користувач повинен мати можливість фільтрувати транспортні засоби за:
-1. локацією (текстове поле)
-2. типом кузова (може бути обрано один тип кузова)
-3. наявністю кондиціонера, кухні, та іншими критеріями (може бути обрано декілька критеріїв).
+## Technologies Used ☕️ 🐍 ⚛️
 
-- `Обране`: користувач повинен мати можливість додавати транспортні засоби до списку обраних. Список обраних кемперів має зберігатись при оновленні сторінки.
-- `Ціна оренди` має бути прописана одним значенням (наприклад, 8000). В UI - виведено через кому (8000,00).
-- `Перехід на сторінку деталей`: користувач повинен мати можливість натиснути на кнопку "Show more" на картці транспортного засобу на сторінці каталогу, щоб перейти в новій вкладці браузера на сторінку з детальним описом цього транспортного засобу.
-- `Довантаження карток`: на сторінці каталогу повинна бути кнопка "Load More", при кліку на яку завантажуються додаткові картки транспортних засобів з урахуванням обраних фільтрів.
-- `Відгуки`: на сторінці окремого кемпера повинні відображатися відгуки інших користувачів, які оцінюють кемпер за п'ятизірковою шкалою.
-- `Форма бронювання`: користувач повинен мати можливість забронювати кемпер, заповнивши форму на сторінці окремого кемпера. Результатом вдалої відправки форми має бути нотифікація про вдале бронювання.
+- **React** - for building the user interface
+- **Redux Toolkit** - for managing global state and actions
+- **React Router** - for navigation between different pages
+- **Formik & Yup** - for form handling and validation
+- **CSS Modules** - for scoped, modular styling
+- **FontAwesome** - for icons
 
-### 6. Дизайн:
+---
 
-- Дотримуватись наданого макету.
-- Верстка повинна бути виконана для десктопної версії. Адаптивність можна реалізувати за бажанням.
+## Setup / Installation 💻
 
+To get a local copy of the project up and running, follow these steps:
 
-### 7. Розробка:
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/akolvakh/goit-neo-test-task TravelTrucks
+    ```
+   
+2. **Navigate to the project directory:**
+    ```bash
+    cd TravelTrucks
+    ```
 
-- Використовувати компонентний підхід.
-- Дотримуватись принципу DRY (Don't Repeat Yourself).
-- Писати чистий та читабельний код з коментарями там, де це необхідно.
-- Проєкт задеплоєний (на vercel.com або netlify.com)
+3. **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-## Інші критерії оцінки виконаного ТЗ:
+4. **Start the development server:**
+    ```bash
+    npm run
+    ```
 
-- Оформлений head сайту
-- Відсутні помилки в консолі
-- Код відформатований
-- Валідна розмітка
-- Відсутні зайві файли в репозиторії
-- Описана інструкція по запуску проєкту в файлі README.md
-- Усі зміни закомічені зі зрозумілими повідомленнями
-- При асинхронних запитах є Loader
-- Коректно працююча маршрутизація на живій сторінці vercel.com/netlify.com
+The application should be running on `http://localhost:5173`.
 
+---
 
-# React + Vite
+## Approach 🚶
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project follows a component-based approach, with each feature encapsulated into reusable components. **Redux Toolkit** is used to handle complex state, particularly for managing the catalog of RVs, filter states, and user favorites. The UI elements were built to be responsive and user-friendly. **CSS Modules** ensure styling is scoped to individual components, avoiding conflicts and enhancing modularity.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Status 📶
 
+The project is currently in progress with plans for the following improvements:
+- Adding user authentication for personalized booking and favorites
+- Implementing a backend API for managing RV data and user bookings
+- Enhancing styling and animations for a more polished user experience
 
-## Usage
+---
 
-```bash
-npm i
-npm run dev
-```
+## Credits 📝
 
-For more information, please refer to the [Vite documentation](https://vitejs.dev/).
+Special thanks to:
+- [React Documentation](https://reactjs.org/docs/getting-started.html) for providing excellent resources.
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/) for state management insights.
+- Icons by [FontAwesome](https://fontawesome.com/).
+
+---
+
+## License ©️
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+Feel free to adapt this template to add any additional sections or information specific to your project!

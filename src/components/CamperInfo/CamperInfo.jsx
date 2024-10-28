@@ -6,6 +6,7 @@ const CamperInfo = ({ name, rating, location, price, reviews }) => {
     return price.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
+      useGrouping: false,
     });
   };
 

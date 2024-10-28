@@ -28,6 +28,7 @@ const RVCard = ({ rv }) => {
     return price.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
+      useGrouping: false,
     });
   };
 

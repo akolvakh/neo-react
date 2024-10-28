@@ -19,11 +19,11 @@ const RVCard = ({ rv }) => {
   };
 
   const handleShowMore = () => {
-    navigate(`/details/${rv.id}`);
+    navigate(`/catalog/${rv.id}`);
   };
 
   const handleReviewsClick = () => {
-    navigate(`/details/${rv.id}`, { state: { activeTab: "reviews" } });
+    navigate(`/catalog/${rv.id}`, { state: { activeTab: "reviews" } });
   };
 
   const formatPrice = (price) => {

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./TabNavigation.module.css";
 
 const TabNavigation = ({ activeTab, setActiveTab }) => (

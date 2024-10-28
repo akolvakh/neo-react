@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Features.module.css";
 import SvgIcon from "../SvgIcon/SvgIcon";
 

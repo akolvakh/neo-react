@@ -1,4 +1,3 @@
-// export const BASE_URL = "https://api.themoviedb.org/3/";§
 export const BASE_URL             = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/";
 export const IMAGE_URL            = "https://image.tmdb.org/t/p/";
 export const DEFAULT_IMG_URL      = "https://www.electiondataservices.com/wp-content/uploads/2014/10/sorry-image-not-available.jpg";

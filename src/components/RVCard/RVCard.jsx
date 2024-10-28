@@ -16,16 +16,12 @@ const RVCard = ({ rv }) => {
     dispatch(toggleFavorite(rv.id));
   };
 
-  // const handleShowMore = () => {
-  //   navigate(`/catalog/${rv.id}`);
-  // };
-
   const handleShowMore = () => {
     window.open(`/catalog/${rv.id}`, '_blank');
   };
   
   const handleReviewsClick = () => {
-    navigate(`/catalog/${rv.id}`, { state: { activeTab: "reviews" } });
+    window.open(`/catalog/${rv.id}`, { state: { activeTab: "reviews" } });
   };
 
   const formatPrice = (price) => {

@@ -35,14 +35,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* width: 112px; */
-  /* height: 96px; */
   width: 95px;
   height: 95px;
   border: 1px solid #ddd;
   border-radius: 10px;
   color: #333;
-  /* margin-bottom: 10px; */
   cursor: pointer;
 }
 
@@ -172,7 +169,6 @@
 .filterGroup {
   margin-bottom: 30px;
 }
-
 
 .filterLocationGroup {
   margin-bottom: 0px;

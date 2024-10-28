@@ -2,7 +2,6 @@
   padding: 118px 170px;
   background-color: white;
   margin: 0 auto;
-  
 }
 
 .catalog {
@@ -13,9 +12,7 @@
 }
 
 .rvCardsSection {
-  /* display: grid; */
   gap: 20px;
-  
 }
 
 .loadMoreButton {

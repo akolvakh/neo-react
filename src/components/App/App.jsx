@@ -4,7 +4,6 @@ import Home from "../../pages/Home/Home";
 import Catalog from "../../pages/Catalog/Catalog";
 import Details from "../../pages/Details/Details";
 import MainLayout from "../MainLayout/MainLayout";
-
 import "../../styles/main.css";
 
 function App() {

@@ -16,11 +16,19 @@ const Reviews = ({ reviews }) => {
                   {review.reviewer_name}
                 </span>
                 <span className={styles.reviewRating}>
-                <div className={styles.ratingContainer}>
-    {Array.from({ length: review.reviewer_rating }, (_, index) => (
-        <SvgIcon key={index} path="rating" size={16} className={styles.rating} />
-    ))}
-</div>
+                  <div className={styles.ratingContainer}>
+                    {Array.from(
+                      { length: review.reviewer_rating },
+                      (_, index) => (
+                        <SvgIcon
+                          key={index}
+                          path="rating"
+                          size={16}
+                          className={styles.rating}
+                        />
+                      )
+                    )}
+                  </div>
                 </span>
               </div>
             </div>

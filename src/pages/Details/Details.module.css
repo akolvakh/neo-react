@@ -1,14 +1,10 @@
 .detailsContainer {
-  /* padding: 118px 170px; */
   margin: auto;
   background-color: #fff;
   color: black;
 }
 
 .flexContainer {
-  /* display: flex;
-    justify-content: space-between;
-    margin-top: 20px; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 44px 0 80px;
@@ -29,10 +25,6 @@
   margin: 0px;
 }
 .camperTopInfo {
-  /* display: flex;
-  flex-direction: column;
-  padding: 0px 0 60px; */
-
   display: flex;
   flex-direction: column;
   gap: 24px;

@@ -7,7 +7,6 @@ const options = {
   },
 };
 
-// Fetch the collection of all campers
 export const fetchCampers = async () => {
   try {
     const response = await axios.get(`${BASE_URL}campers`, options);
@@ -18,7 +17,6 @@ export const fetchCampers = async () => {
   }
 };
 
-// Fetch details of a specific camper by ID
 const fetchCamperDetails = async (camperId) => {
   try {
     const response = await axios.get(`${BASE_URL}campers/${camperId}`, options);

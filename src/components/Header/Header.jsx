@@ -8,26 +8,31 @@ const Header = () => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.content}>
-      <Link to="/" className={styles.logo}>
-        <span className={styles.travel}>Travel</span><span className={styles.trucks}>Trucks</span>
-      </Link>
-      <nav className={styles.nav}>
-        <Link
-          to="/"
-          className={location.pathname === "/" ? styles.active : styles.navLink}
-        >
-          Home
-        </Link>
-        <Link
-          to="/catalog"
-          className={
-            location.pathname === "/catalog" ? styles.active : styles.navLink
-          }
-        >
-          Catalog
-        </Link>
-      </nav>
-      </div>
+          <Link to="/" className={styles.logo}>
+            <span className={styles.travel}>Travel</span>
+            <span className={styles.trucks}>Trucks</span>
+          </Link>
+          <nav className={styles.nav}>
+            <Link
+              to="/"
+              className={
+                location.pathname === "/" ? styles.active : styles.navLink
+              }
+            >
+              Home
+            </Link>
+            <Link
+              to="/catalog"
+              className={
+                location.pathname === "/catalog"
+                  ? styles.active
+                  : styles.navLink
+              }
+            >
+              Catalog
+            </Link>
+          </nav>
+        </div>
       </div>
     </header>
   );

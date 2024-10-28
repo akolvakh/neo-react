@@ -22,7 +22,6 @@
   --font-color-dark: #6c717b;
 }
 
-
 a {
   font-weight: 500;
   color: #d84343;
@@ -39,9 +38,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   min-width: 320px;
-  /* min-height: 100vh; */
   opacity: 1;
   overflow-x: hidden;
   background-color: #ffffff;
@@ -122,7 +119,6 @@ button:focus-visible {
 .react-datepicker-wrapper {
   display: inline;
 }
-
 
 .container {
   width: 1344px;

@@ -21,7 +21,7 @@ const RVCard = ({ rv }) => {
   };
   
   const handleReviewsClick = () => {
-    window.open(`/catalog/${rv.id}`, { state: { activeTab: "reviews" } });
+    navigate(`/catalog/${rv.id}`, { state: { activeTab: "reviews" } });
   };
 
   const formatPrice = (price) => {

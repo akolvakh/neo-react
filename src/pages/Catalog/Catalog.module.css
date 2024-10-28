@@ -2,17 +2,20 @@
   padding: 118px 170px;
   background-color: white;
   margin: 0 auto;
+  
 }
 
 .catalog {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 20px;
+  padding: 48px 0px;
 }
 
 .rvCardsSection {
-  display: grid;
+  /* display: grid; */
   gap: 20px;
+  
 }
 
 .loadMoreButton {

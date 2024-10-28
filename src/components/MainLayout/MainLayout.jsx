@@ -15,10 +15,10 @@ const MainLayout = () => {
   }, [location]);
 
   return (
-    <div>
+    <main className="main">
       {isLoading && <Loader />}
       <Outlet />
-    </div>
+    </main>
   );
 };
 

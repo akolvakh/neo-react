@@ -1,5 +1,5 @@
 .detailsContainer {
-  padding: 118px 170px;
+  /* padding: 118px 170px; */
   margin: auto;
   background-color: #fff;
   color: black;
@@ -26,9 +26,15 @@
   font-size: 16px;
   line-height: 24px;
   color: #475467;
+  margin: 0px;
 }
 .camperTopInfo {
+  /* display: flex;
+  flex-direction: column;
+  padding: 0px 0 60px; */
+
   display: flex;
   flex-direction: column;
-  padding: 0px 0 60px;
+  gap: 24px;
+  padding: 48px 0px 60px;
 }

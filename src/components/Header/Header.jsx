@@ -6,6 +6,8 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
+      <div className="container">
+        <div className={styles.content}>
       <Link to="/" className={styles.logo}>
         Travel<span className={styles.trucks}>Trucks</span>
       </Link>
@@ -25,6 +27,8 @@ const Header = () => {
           Catalog
         </Link>
       </nav>
+      </div>
+      </div>
     </header>
   );
 };

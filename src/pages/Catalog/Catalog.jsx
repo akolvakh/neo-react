@@ -44,7 +44,7 @@ const Catalog = () => {
   const displayedCampers = filteredCampers.slice(0, visibleCount);
 
   return (
-    <section className={styles.container}>
+    <div className="container">
       <Toaster position="top-right" reverseOrder={false} />
 
       {loading && <Loader />}
@@ -64,7 +64,7 @@ const Catalog = () => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -6,6 +6,7 @@ const Home = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.overlay}></div>
+      <div className="container">
       <div className={styles.content}>
         <h1 className={styles.title}>Campers of your dreams</h1>
         <p className={styles.subtitle}>
@@ -14,6 +15,7 @@ const Home = () => {
         <Link to="/catalog">
           <Button label="View Now" variant="primary" />
         </Link>
+        </div>
       </div>
     </div>
   );

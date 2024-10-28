@@ -32,7 +32,7 @@ const Filters = () => {
 
   return (
     <div className={styles.filtersSection}>
-      <div className={styles.filterGroup}>
+      <div className={styles.filterLocationGroup}>
         <span className={styles.label}>Location</span>
         <div className={styles.locationInputWrapper}>
           <SvgIcon path="map" className={styles.locationIcon} size={20} />

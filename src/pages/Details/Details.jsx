@@ -47,26 +47,28 @@ const Details = () => {
     <div className={styles.detailsContainer}>
       <Toaster position="top-right" reverseOrder={false} />
       {error && <div>{error}</div>}
-      <div className={styles.camperTopInfo}>
-        <CamperInfo
-          name={camper?.name}
-          rating={camper?.rating}
-          location={camper?.location}
-          price={camper?.price}
-          reviews={camper?.reviews}
-        />
-        <Gallery gallery={camper?.gallery} name={camper?.name} />
-        <p className={styles.camperDescription}>{camper?.description}</p>
-      </div>
-      <div>
-        <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className={styles.flexContainer}>
-          {activeTab === "features" ? (
-            <Features camper={camper} />
-          ) : (
-            <Reviews reviews={camper?.reviews} />
-          )}
-          <BookingForm />
+      <div className="container">
+        <div className={styles.camperTopInfo}>
+          <CamperInfo
+            name={camper?.name}
+            rating={camper?.rating}
+            location={camper?.location}
+            price={camper?.price}
+            reviews={camper?.reviews}
+          />
+          <Gallery gallery={camper?.gallery} name={camper?.name} />
+          <p className={styles.camperDescription}>{camper?.description}</p>
+        </div>
+        <div>
+          <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+          <div className={styles.flexContainer}>
+            {activeTab === "features" ? (
+              <Features camper={camper} />
+            ) : (
+              <Reviews reviews={camper?.reviews} />
+            )}
+            <BookingForm />
+          </div>
         </div>
       </div>
     </div>

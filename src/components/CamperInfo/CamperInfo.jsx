@@ -1,5 +1,5 @@
-import styles from "./CamperInfo.module.css";
 import SvgIcon from "../SvgIcon/SvgIcon";
+import styles from "./CamperInfo.module.css";
 
 const CamperInfo = ({ name, rating, location, price, reviews }) => {
   const formatPrice = (price) => {

@@ -2,9 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../../redux/vehiclesSlice";
 import { useNavigate } from "react-router-dom";
 import SvgIcon from "../SvgIcon/SvgIcon";
-import styles from "./RVCard.module.css";
 import Button from "../../components/Button/Button";
-
+import styles from "./RVCard.module.css";
 
 const RVCard = ({ rv }) => {
   const dispatch = useDispatch();

@@ -6,10 +6,10 @@ import {
   setLoadingMore,
   clearFilters,
 } from "../../redux/vehiclesSlice";
+import toast, { Toaster } from "react-hot-toast";
 import RVCard from "../../components/RVCard/RVCard";
 import Filters from "../../components/Filters/Filters";
 import Loader from "../../components/Loader/Loader";
-import toast, { Toaster } from "react-hot-toast";
 import styles from "./Catalog.module.css";
 
 const Catalog = () => {

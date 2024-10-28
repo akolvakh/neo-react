@@ -8,7 +8,7 @@ import Features from "../../components/Features/Features";
 import Reviews from "../../components/Reviews/Reviews";
 import BookingForm from "../../components/BookingForm/BookingForm";
 import TabNavigation from "../../components/TabNavigation/TabNavigation";
-import detailsStyles from "./Details.module.css";
+import styles from "./Details.module.css";
 
 const Details = () => {
   const { id } = useParams();
@@ -44,10 +44,10 @@ const Details = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className={detailsStyles.detailsContainer}>
+    <div className={styles.detailsContainer}>
       <Toaster position="top-right" reverseOrder={false} />
       {error && <div>{error}</div>}
-      <div className={detailsStyles.camperTopInfo}>
+      <div className={styles.camperTopInfo}>
         <CamperInfo
           name={camper?.name}
           rating={camper?.rating}
@@ -56,11 +56,11 @@ const Details = () => {
           reviews={camper?.reviews}
         />
         <Gallery gallery={camper?.gallery} name={camper?.name} />
-        <p className={detailsStyles.camperDescription}>{camper?.description}</p>
+        <p className={styles.camperDescription}>{camper?.description}</p>
       </div>
       <div>
         <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className={detailsStyles.flexContainer}>
+        <div className={styles.flexContainer}>
           {activeTab === "features" ? (
             <Features camper={camper} />
           ) : (

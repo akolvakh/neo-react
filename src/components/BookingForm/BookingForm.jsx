@@ -1,10 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
-import styles from "./BookingForm.module.css";
+import "react-datepicker/dist/react-datepicker.css";
 import customLocale from "../../services/customLocale";
+import styles from "./BookingForm.module.css";
 
 const BookingForm = () => {
   const validationSchema = Yup.object({

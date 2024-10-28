@@ -1,5 +1,5 @@
-import styles from "./Features.module.css";
 import SvgIcon from "../SvgIcon/SvgIcon";
+import styles from "./Features.module.css";
 
 const formIcons = {
   alcove: "alcove",

@@ -22,7 +22,13 @@
 }
 
 .trucks {
-  font-weight: normal;
+  font-weight: bold;
+  color: rgb(71, 84, 103);
+}
+
+.travel {
+  font-weight: bold;
+  color: rgb(16, 24, 40);
 }
 
 .nav {

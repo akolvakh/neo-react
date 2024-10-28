@@ -1,7 +1,7 @@
 .reviewList {
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 36px;
   padding: 0px;
 }
 
@@ -56,6 +56,7 @@
 .reviewerDetails {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 .reviewerHeader {
@@ -63,4 +64,13 @@
   align-items: self-start;
   flex-direction: column;
   margin-bottom: 8px;
+}
+
+.rating {
+  color: #ffc531;
+}
+
+.ratingContainer {
+  display: inline-flex;
+  gap: 2px;
 }

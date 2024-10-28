@@ -1,3 +1,4 @@
+import SvgIcon from "../SvgIcon/SvgIcon";
 import styles from "./Reviews.module.css";
 
 const Reviews = ({ reviews }) => {
@@ -15,7 +16,11 @@ const Reviews = ({ reviews }) => {
                   {review.reviewer_name}
                 </span>
                 <span className={styles.reviewRating}>
-                  {"⭐".repeat(review.reviewer_rating)}
+                <div className={styles.ratingContainer}>
+    {Array.from({ length: review.reviewer_rating }, (_, index) => (
+        <SvgIcon key={index} path="rating" size={16} className={styles.rating} />
+    ))}
+</div>
                 </span>
               </div>
             </div>
